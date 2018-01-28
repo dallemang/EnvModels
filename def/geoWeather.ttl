@@ -27,7 +27,6 @@
 @prefix scovo: <http://purl.org/NET/scovo#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix syu: <http://data.syngenta.org/def/upper/> .
-@prefix syu-ttl: <http://data.syngenta.org/def/upper> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix unit: <http://qudt.org/1.1/vocab/unit#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
