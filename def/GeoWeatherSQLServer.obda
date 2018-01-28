@@ -1,0 +1,69 @@
+[PrefixDeclaration]
+:		http://data.syngenta.com/def/geoWeather/all#
+sh:		http://www.w3.org/ns/shacl#
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+xml:		http://www.w3.org/XML/1998/namespace
+xsd:		http://www.w3.org/2001/XMLSchema#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+time:		http://data.syngenta.com/def/geoWeather/Time#
+unit:		http://data.syngenta.com/def/geoWeather/Unit#
+class:		http://data.syngenta.com/def/core/Class#
+graph:		http://data.syngenta.com/def/core/Graph#
+model:		http://data.syngenta.com/def/geoWeather/Model#
+shape:		http://data.syngenta.com/def/core/Shape#
+entity:		http://data.syngenta.com/def/geoWeather/Entity#
+geoSet:		http://data.syngenta.com/def/geoWeather/GeoSet#
+sensor:		http://data.syngenta.com/def/geoWeather/Sensor#
+vector:		http://data.syngenta.com/def/geoWeather/Vector#
+upper:		http://data.syngenta.com/def/upper/
+upper:		http://data.syngenta.com/def/unit/
+dataSet:		http://data.syngenta.com/def/geoWeather/DataSet/
+measure:		http://data.syngenta.com/def/geoWeather/Measure/
+property:	http://data.syngenta.com/def/core/Property#
+geoExtent:	http://data.syngenta.com/def/geoWeather/geoExtent#
+geoWeather:	http://data.syngenta.com/def/geoWeather/
+datasetType:	http://data.syngenta.com/def/geoWeather/DataSetType/
+measureType:	http://data.syngenta.com/def/geoWeather/MeasureType/
+observation:	http://data.syngenta.com/def/geoWeather/Observation/
+observationSet:	http://data.syngenta.com/def/geoWeather/ObservationSet/
+datasetRelease:	http://data.syngenta.com/def/geoWeather/DataSetRelease/
+publisher:	http://data.syngenta.com/def/geoWeather/Publisher/
+coordinateSystem:	http://data.syngenta.com/def/geoWeather/coordinateSystem/
+qualityIndicator:	http://data.syngenta.com/def/geoWeather/qualityIndicator/
+datasetReleaseType:	http://data.syngenta.com/def/geoWeather/dataSetRelease/
+qualityIndicatorType:	http://data.syngenta.com/def/geoWeather/qualityIndicatorType/
+sphericalCoordinate:	http://data.syngenta.com/def/geoWeather/sphericalCoordinate/
+spatialReferenceSystem:	http://data.syngenta.com/def/geoWeather/spatialReferenceSystem/
+georeference:	http://data.syngenta.com/def/geoWeather/georeference/
+geoSet:	http://data.syngenta.com/def/geoWeather/GeoSet/
+country:	http://data.syngenta.com/def/geoWeather/Country/
+datum: 	http://data.syngenta.com/def/geoWeather/Datum/
+component: 	http://data.syngenta.com/def/geoWeather/Component/
+date: 	http://data.syngenta.com/def/geoWeather/Date/
+
+[SourceDeclaration]
+sourceUri	datasource1
+connectionUrl	jdbc:sqlserver://15.141.17.161:1433;databaseName=p_grows
+username	ais_Juerg
+password	c53q8rZy
+driverClass	com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+
+[MappingDeclaration] @collection [[
+mappingId	urn:MAPID-ab634c945f6941abaf4c8498d9e93473
+target measure:m{ID} a geoWeather:Measure ; measure:name {Label}@en ; measure:description {Description}@en ; measure:code {ID}^^rdfs:Literal ; measure:inDatasetRelease datasetRelease:{DatasetLabel}-{DatasetRelease} ; measure:inDataset dataSet:{DatasetLabel} . 
+source		select Label,Description,DatasetLabel,DatasetRelease,substr(hashbytes( 'SHA2_256',Label),2) as ID from measures
+
+mappingId	urn:MAPID-ab634c945f6941abaf4c8498d9e93474
+target dataSet:ds{Label} a geoWeather:DataSet ; dataSet:code "{Label}"@en ; dataSet:name "{Label}"@en . datasetRelease:dsr{ID} a geoWeather:DatasetRelease ; datasetRelease:name {Title}@en ; datasetRelease:code "{ID}"^^rdfs:Literal ; datasetRelease:hasVersion "{Release}"^^xsd:integer ; datasetRelease:isReleaseOf dataSet:ds{Label} ;  datasetRelease:hasDate "{Released}"^^xsd:dateTime ; datasetRelease:publisherName "{Publisher}"@en ; datasetRelease:keywordSet "{Keywords}"@en ; datasetRelease:description "{Description}"@en ; dataSet:spatialReferenceSystem spatialReferenceSystem:srs{SpatialReferenceSystemIdentifier} . 
+source		select Title,Label,Release,IsLatestRelease,Released,Publisher,Keywords,Description,SpatialReferenceSystemIdentifier,concat(Label,'-',Release) as ID from datasets
+
+mappingId	urn:MAPID-ab634c945f6941abaf4c8498d9e93475
+target geoSet:gr{GeoReferenceID} a geoWeather:GeoSet ; geoSet:name "{GeoReferenceID}"@en ; geoSet:code "{GeoReferenceID}"^^rdfs:Literal ; geoSet:latitude "{Latitude}"^^xsd:double ; geoSet:longitude "{Longitude}"^^xsd:double ; geoSet:altitude "{AltitudeInM}"^^xsd:double ; geoSet:datasetRelease datasetRelease:{DatasetLabel}-{DatasetRelease} ; geoSet:WKTPolygon "{PolygonAsWKT}"^^rdfs:Literal ; geoSet:WKBPolygon "{PolygonAsWKB}"^^rdfs:Literal ; georeference:country country:{CountryCodeISO2} .  
+source select RequestGeoItemID,DatasetLabel,DatasetRelease,DatasetIsLatestRelease,GeoReferenceID,Latitude,Longitude,PolygonAsWKT,PolygonAsWKB,AltitudeInM,CountryCodeISO2 from georeference
+
+mappingId	urn:MAPID-ab634c945f6941abaf4c8498d9e93476
+target observation:{ObservationID} a geoWeather:Observation ; observation:measure measure:{MeasureID} ; observation:value "{DailyValue}"^^xsd:double ; observation:set observationSet:{ObservationID} ; observation:id "{ObservationID}" ; observation:date "{ProcessedDate}"^^xsd:date ; observation:datasetRelease datasetRelease:dsr{DatasetLabel}-{DatasetRelease} ; observation:intersectedArea "{IntersectedAreaWithRequestGeoItemInM2}"^^xsd:double ; observation:georeference georeference:gr{GeoReferenceID} . 
+source select RequestID, RequestGeoItemID, DatasetLabel, DatasetRelease, DatasetIsLatestRelease, GeoReferenceID, Latitude, Longitude, AltitudeInM, CountryCodeISO2, GeoName, IntersectedAreaWithRequestGeoItemInM2, DistanceToNearestGeoPartInM, Date, Year, Month, ISOWeekNo, MonthDay, DayOfYear,substr(Date,1,10) as ProcessedDate, MeasureLabel, DailyValue,concat("obs-",substr(hashbytes( 'SHA2_256',concat(DatasetLabel,DatasetRelease,Date,GeoReferenceID)),2)) as ObservationSetID, concat("obs-",substr(hashbytes( 'SHA2_256',concat(DatasetLabel,DatasetRelease,Date,MeasureLabel,GeoReferenceID)),2)) as ObservationID, replace(replace(replace(replace(MeasureLabel,'(','_'),')',''),' ','_'),"/","_per_") as MeasureID from dailydata
+]]

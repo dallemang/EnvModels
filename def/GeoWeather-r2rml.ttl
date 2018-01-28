@@ -1,0 +1,298 @@
+@prefix rr:    <http://www.w3.org/ns/r2rml#> .
+
+<urn:MAPID-ab634c945f6941abaf4c8498d9e93474_1>
+        a                      rr:TriplesMap ;
+        rr:logicalTable        [ a            rr:R2RMLView ;
+                                 rr:sqlQuery  "select Title,Label,Release,IsLatestRelease,Released,Publisher,Keywords,Description,SpatialReferenceSystemIdentifier,concat(Label,'-',Release) as ID from datasets"
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:template  "{Label}" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/DataSet/code>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:ObjectMap , rr:TermMap ;
+                                                 rr:template  "{Label}" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/DataSet/name>
+                               ] ;
+        rr:subjectMap          [ a            rr:TermMap , rr:SubjectMap ;
+                                 rr:class     <http://data.syngenta.com/def/geoWeather/DataSet> ;
+                                 rr:template  "http://data.syngenta.com/def/geoWeather/DataSet/ds{Label}" ;
+                                 rr:termType  rr:IRI
+                               ] .
+
+<urn:MAPID-ab634c945f6941abaf4c8498d9e93473_1>
+        a                      rr:TriplesMap ;
+        rr:logicalTable        [ a            rr:R2RMLView ;
+                                 rr:sqlQuery  "select Label,Description,DatasetLabel,DatasetRelease,substr(hashbytes( 'SHA2_256',Label),2) as ID from measures"
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:language  "en" ;
+                                                 rr:template  "{Label}" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/Measure/name>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:ObjectMap , rr:TermMap ;
+                                                 rr:language  "en" ;
+                                                 rr:template  "{Description}" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/Measure/description>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:ObjectMap , rr:TermMap ;
+                                                 rr:template  "{ID}" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/Measure/code>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:template  "http://data.syngenta.com/def/geoWeather/DataSetRelease/{DatasetLabel}-{DatasetRelease}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/Measure/inDatasetRelease>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:ObjectMap , rr:TermMap ;
+                                                 rr:template  "http://data.syngenta.com/def/geoWeather/DataSet/{DatasetLabel}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/Measure/inDataset>
+                               ] ;
+        rr:subjectMap          [ a            rr:TermMap , rr:SubjectMap ;
+                                 rr:class     <http://data.syngenta.com/def/geoWeather/Measure> ;
+                                 rr:template  "http://data.syngenta.com/def/geoWeather/Measure/m{ID}" ;
+                                 rr:termType  rr:IRI
+                               ] .
+
+<urn:MAPID-ab634c945f6941abaf4c8498d9e93474_2>
+        a                      rr:TriplesMap ;
+        rr:logicalTable        [ a            rr:R2RMLView ;
+                                 rr:sqlQuery  "select Title,Label,Release,IsLatestRelease,Released,Publisher,Keywords,Description,SpatialReferenceSystemIdentifier,concat(Label,'-',Release) as ID from datasets"
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:template  "http://data.syngenta.com/def/geoWeather/DataSet/ds{Label}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/DataSetRelease/isReleaseOf>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:template  "{Publisher}" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/DataSetRelease/publisherName>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:datatype  <http://www.w3.org/2001/XMLSchema#dateTime> ;
+                                                 rr:template  "{Released}" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/DataSetRelease/hasDate>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:ObjectMap , rr:TermMap ;
+                                                 rr:template  "{Keywords}" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/DataSetRelease/keywordSet>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:template  "{ID}" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/DataSetRelease/code>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:ObjectMap , rr:TermMap ;
+                                                 rr:datatype  <http://www.w3.org/2001/XMLSchema#integer> ;
+                                                 rr:template  "{Release}" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/DataSetRelease/hasVersion>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:ObjectMap , rr:TermMap ;
+                                                 rr:template  "{Description}" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/DataSetRelease/description>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:language  "en" ;
+                                                 rr:template  "{Title}" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/DataSetRelease/name>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:template  "http://data.syngenta.com/def/geoWeather/spatialReferenceSystem/srs{SpatialReferenceSystemIdentifier}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/DataSet/spatialReferenceSystem>
+                               ] ;
+        rr:subjectMap          [ a            rr:SubjectMap , rr:TermMap ;
+                                 rr:class     <http://data.syngenta.com/def/geoWeather/DatasetRelease> ;
+                                 rr:template  "http://data.syngenta.com/def/geoWeather/DataSetRelease/dsr{ID}" ;
+                                 rr:termType  rr:IRI
+                               ] .
+
+<urn:MAPID-ab634c945f6941abaf4c8498d9e93476_1>
+        a                      rr:TriplesMap ;
+        rr:logicalTable        [ a            rr:R2RMLView ;
+                                 rr:sqlQuery  "select RequestID, RequestGeoItemID, DatasetLabel, DatasetRelease, DatasetIsLatestRelease, GeoReferenceID, Latitude, Longitude, AltitudeInM, CountryCodeISO2, GeoName, IntersectedAreaWithRequestGeoItemInM2, DistanceToNearestGeoPartInM, Date, Year, Month, ISOWeekNo, MonthDay, DayOfYear,substr(Date,1,10) as ProcessedDate, MeasureLabel, DailyValue,concat(\"obs-\",substr(hashbytes( 'SHA2_256',concat(DatasetLabel,DatasetRelease,Date,GeoReferenceID)),2)) as ObservationSetID, concat(\"obs-\",substr(hashbytes( 'SHA2_256',concat(DatasetLabel,DatasetRelease,Date,MeasureLabel,GeoReferenceID)),2)) as ObservationID, replace(replace(replace(replace(MeasureLabel,'(','_'),')',''),' ','_'),\"/\",\"_per_\") as MeasureID from dailydata"
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:ObjectMap , rr:TermMap ;
+                                                 rr:datatype  <http://www.w3.org/2001/XMLSchema#double> ;
+                                                 rr:template  "{DailyValue}" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/Observation/value>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:ObjectMap , rr:TermMap ;
+                                                 rr:template  "http://data.syngenta.com/def/geoWeather/georeference/gr{GeoReferenceID}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/Observation/georeference>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:ObjectMap , rr:TermMap ;
+                                                 rr:template  "{ObservationID}" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/Observation/id>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:template  "http://data.syngenta.com/def/geoWeather/ObservationSet/{ObservationID}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/Observation/set>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:ObjectMap , rr:TermMap ;
+                                                 rr:template  "http://data.syngenta.com/def/geoWeather/DataSetRelease/dsr{DatasetLabel}-{DatasetRelease}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/Observation/datasetRelease>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:datatype  <http://www.w3.org/2001/XMLSchema#double> ;
+                                                 rr:template  "{IntersectedAreaWithRequestGeoItemInM2}" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/Observation/intersectedArea>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:datatype  <http://www.w3.org/2001/XMLSchema#date> ;
+                                                 rr:template  "{ProcessedDate}" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/Observation/date>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:template  "http://data.syngenta.com/def/geoWeather/Measure/{MeasureID}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/Observation/measure>
+                               ] ;
+        rr:subjectMap          [ a            rr:TermMap , rr:SubjectMap ;
+                                 rr:class     <http://data.syngenta.com/def/geoWeather/Observation> ;
+                                 rr:template  "http://data.syngenta.com/def/geoWeather/Observation/{ObservationID}" ;
+                                 rr:termType  rr:IRI
+                               ] .
+
+<urn:MAPID-ab634c945f6941abaf4c8498d9e93475_1>
+        a                      rr:TriplesMap ;
+        rr:logicalTable        [ a            rr:R2RMLView ;
+                                 rr:sqlQuery  "select RequestGeoItemID,DatasetLabel,DatasetRelease,DatasetIsLatestRelease,GeoReferenceID,Latitude,Longitude,PolygonAsWKT,PolygonAsWKB,AltitudeInM,CountryCodeISO2 from georeference"
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:datatype  <http://www.w3.org/2001/XMLSchema#double> ;
+                                                 rr:template  "{Latitude}" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/GeoSet/latitude>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:template  "{PolygonAsWKT}" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/GeoSet/WKTPolygon>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:ObjectMap , rr:TermMap ;
+                                                 rr:template  "http://data.syngenta.com/def/geoWeather/DataSetRelease/{DatasetLabel}-{DatasetRelease}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/GeoSet/datasetRelease>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:template  "{GeoReferenceID}" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/GeoSet/code>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:ObjectMap , rr:TermMap ;
+                                                 rr:template  "{GeoReferenceID}" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/GeoSet/name>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:datatype  <http://www.w3.org/2001/XMLSchema#double> ;
+                                                 rr:template  "{Longitude}" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/GeoSet/longitude>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:datatype  <http://www.w3.org/2001/XMLSchema#double> ;
+                                                 rr:template  "{AltitudeInM}" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/GeoSet/altitude>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:ObjectMap , rr:TermMap ;
+                                                 rr:template  "{PolygonAsWKB}" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/GeoSet/WKBPolygon>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:template  "http://data.syngenta.com/def/geoWeather/Country/{CountryCodeISO2}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  <http://data.syngenta.com/def/geoWeather/georeference/country>
+                               ] ;
+        rr:subjectMap          [ a            rr:TermMap , rr:SubjectMap ;
+                                 rr:class     <http://data.syngenta.com/def/geoWeather/GeoSet> ;
+                                 rr:template  "http://data.syngenta.com/def/geoWeather/GeoSet/gr{GeoReferenceID}" ;
+                                 rr:termType  rr:IRI
+                               ] .
