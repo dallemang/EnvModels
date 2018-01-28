@@ -5,7 +5,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix geoWeather: <http://data.syngenta.com/def/geoWeather/>.
-@prefix weatherMetric: <http://data.syngenta.com/def/geoWeather/WeatherMetric/>.
+@prefix weatherMetric: <http://data.syngenta.com/def/geoWeather/weatherMetric/>.
 @prefix weatherMetricType: <http://data.syngenta.com/def/geoWeather/WeatherMetricType/>.
 @prefix measureMethod: <http://data.syngenta.com/def/geoWeather/MeasureMethod/>.
 @prefix measure: <http://data.syngenta.com/def/geoWeather/Measure/>.
