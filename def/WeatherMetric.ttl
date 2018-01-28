@@ -1,1248 +1,613 @@
-@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
-@prefix qudt: <http://qudt.org/1.1/schema/qudt#>.
-@prefix owl: <http://www.w3.org/2002/07/owl#>.
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix geoWeather: <http://data.syngenta.com/def/geoWeather/>.
-@prefix weatherMetric: <http://data.syngenta.com/def/geoWeather/weatherMetric/>.
-@prefix weatherMetricType: <http://data.syngenta.com/def/geoWeather/WeatherMetricType/>.
-@prefix measureMethod: <http://data.syngenta.com/def/geoWeather/MeasureMethod/>.
-@prefix measure: <http://data.syngenta.com/def/geoWeather/Measure/>.
-@prefix qualityIndicator: <http://data.syngenta.com/def/geoWeather/QualityIndicator/>.
-@prefix unit: <http://data.syngenta.com/def/geoWeather/Unit/>.
+# baseURI: file:/C:/Users/Dean/Documents/EnvModels/def/weatherMetric
+# imports: http://www.w3.org/2004/02/skos/core
 
+@prefix geoWeather: <http://data.syngenta.com/def/geoWeather/> .
+@prefix measure: <http://data.syngenta.com/def/geoWeather/Measure/> .
+@prefix measureMethod: <http://data.syngenta.com/def/geoWeather/MeasureMethod/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qualityIndicator: <http://data.syngenta.com/def/geoWeather/QualityIndicator/> .
+@prefix qudt: <http://qudt.org/1.1/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://data.syngenta.com/def/geoWeather/Unit/> .
+@prefix weatherMetric: <http://data.syngenta.com/def/geoWeather/weatherMetric/> .
+@prefix weatherMetricType: <http://data.syngenta.com/def/geoWeather/WeatherMetricType/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<file:/C:/Users/Dean/Documents/EnvModels/def/weatherMetric>
+  rdf:type owl:Ontology ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+.
+measureMethod:Daily
+  rdf:type geoWeather:MeasureMethod ;
+  skos:prefLabel "Daily" ;
+  skos:topConceptOf geoWeather:MeasureMethodSchema ;
+.
+measureMethod:DailyAvg
+  rdf:type geoWeather:MeasureMethod ;
+  skos:prefLabel "DailyAvg" ;
+  skos:topConceptOf geoWeather:MeasureMethodSchema ;
+.
+measureMethod:DailyMax
+  rdf:type geoWeather:MeasureMethod ;
+  skos:prefLabel "DailyMax" ;
+  skos:topConceptOf geoWeather:MeasureMethodSchema ;
+.
+measureMethod:DailyMin
+  rdf:type geoWeather:MeasureMethod ;
+  skos:prefLabel "DailyMin" ;
+  skos:topConceptOf geoWeather:MeasureMethodSchema ;
+.
+measureMethod:DailySum
+  rdf:type geoWeather:MeasureMethod ;
+  skos:prefLabel "DailySum" ;
+  skos:topConceptOf geoWeather:MeasureMethodSchema ;
+.
+measureMethod:DaytimeMax
+  rdf:type geoWeather:MeasureMethod ;
+  skos:prefLabel "DaytimeMax" ;
+  skos:topConceptOf geoWeather:MeasureMethodSchema ;
+.
+measureMethod:NighttimeMin
+  rdf:type geoWeather:MeasureMethod ;
+  skos:prefLabel "NighttimeMin" ;
+  skos:topConceptOf geoWeather:MeasureMethodSchema ;
+.
+qualityIndicator:QI1
+  rdf:type geoWeather:QualityIndicator ;
+  skos:prefLabel "QI1" ;
+  skos:topConceptOf geoWeather:QualityIndicator ;
+.
+qualityIndicator:QI2
+  rdf:type geoWeather:QualityIndicator ;
+  skos:prefLabel "QI2" ;
+  skos:topConceptOf geoWeather:QualityIndicator ;
+.
+unit:C
+  rdf:type geoWeather:Unit ;
+  skos:prefLabel "C" ;
+  skos:topConceptOf geoWeather:Unit ;
+.
+unit:Deg
+  rdf:type geoWeather:Unit ;
+  skos:prefLabel "Deg" ;
+  skos:topConceptOf geoWeather:Unit ;
+.
+unit:Wh_per_m2
+  rdf:type geoWeather:Unit ;
+  skos:prefLabel "Wh/m2" ;
+  skos:topConceptOf geoWeather:Unit ;
+.
+unit:h
+  rdf:type geoWeather:Unit ;
+  skos:prefLabel "h" ;
+  skos:topConceptOf geoWeather:Unit ;
+.
+unit:m_per_s
+  rdf:type geoWeather:Unit ;
+  skos:prefLabel "m/s" ;
+  skos:topConceptOf geoWeather:Unit ;
+.
+unit:mm
+  rdf:type geoWeather:Unit ;
+  skos:prefLabel "mm" ;
+  skos:topConceptOf geoWeather:Unit ;
+.
+unit:pct
+  rdf:type geoWeather:Unit ;
+  skos:prefLabel "pct" ;
+  skos:topConceptOf geoWeather:Unit ;
+.
 weatherMetric:CloudcoverDailyAvgpct
-    a geoWeather:weatherMetric;
-    skos:prefLabel "Cloudcover_DailyAvg (pct)"@en;
-    skos:notation "CDA" ; 
-    skos:definition """This provides the DailyAvg method of the Cloudcover in pct units.""";
-    weatherMetric:type weatherMetricType:Cloudcover;
-    weatherMetric:method measureMethod:DailyAvg;
-    weatherMetric:unit unit:pct;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyAvg ;
+  weatherMetric:type weatherMetricType:Cloudcover ;
+  weatherMetric:unit unit:pct ;
+  skos:definition "This provides the DailyAvg method of the Cloudcover in pct units." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "CDA" ;
+  skos:prefLabel "Cloudcover_DailyAvg (pct)"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyAvg 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyAvg";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-unit:pct 
-  a geoWeather:Unit;
-  skos:prefLabel "pct";
-  skos:topConceptOf geoWeather:Unit;
-  .
-
-
-
 weatherMetric:EvapotranspirationDailySummm
-    a geoWeather:weatherMetric;
-    skos:prefLabel "Evapotranspiration_DailySum (mm)"@en;
-    skos:notation "EDS" ; 
-    skos:definition """This provides the DailySum method of the Evapotranspiration in mm units.""";
-    weatherMetric:type weatherMetricType:Evapotranspiration;
-    weatherMetric:method measureMethod:DailySum;
-    weatherMetric:unit unit:mm;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailySum ;
+  weatherMetric:type weatherMetricType:Evapotranspiration ;
+  weatherMetric:unit unit:mm ;
+  skos:definition "This provides the DailySum method of the Evapotranspiration in mm units." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "EDS" ;
+  skos:prefLabel "Evapotranspiration_DailySum (mm)"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailySum 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailySum";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-unit:mm 
-  a geoWeather:Unit;
-  skos:prefLabel "mm";
-  skos:topConceptOf geoWeather:Unit;
-  .
-
-
-
 weatherMetric:EvapotranspirationQI1
-    a geoWeather:weatherMetric;
-    skos:prefLabel "Evapotranspiration_QI1"@en;
-    skos:notation "EQI1" ; 
-    skos:definition """This provides the QI1 quality indicator of the Evapotranspiration.""";
-    weatherMetric:type weatherMetricType:Evapotranspiration;
-    weatherMetric:qualityIndicator qualityIndicator:QI1;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:qualityIndicator qualityIndicator:QI1 ;
+  weatherMetric:type weatherMetricType:Evapotranspiration ;
+  skos:definition "This provides the QI1 quality indicator of the Evapotranspiration." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "EQI1" ;
+  skos:prefLabel "Evapotranspiration_QI1"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-qualityIndicator:QI1 
-  a geoWeather:QualityIndicator;
-  skos:prefLabel "QI1";
-skos:topConceptOf geoWeather:QualityIndicator;
-  .
-
-
-
 weatherMetric:EvapotranspirationQI2
-    a geoWeather:weatherMetric;
-    skos:prefLabel "Evapotranspiration_QI2"@en;
-    skos:notation "EQI2" ; 
-    skos:definition """This provides the QI2 quality indicator of the Evapotranspiration.""";
-    weatherMetric:type weatherMetricType:Evapotranspiration;
-    weatherMetric:qualityIndicator qualityIndicator:QI2;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:qualityIndicator qualityIndicator:QI2 ;
+  weatherMetric:type weatherMetricType:Evapotranspiration ;
+  skos:definition "This provides the QI2 quality indicator of the Evapotranspiration." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "EQI2" ;
+  skos:prefLabel "Evapotranspiration_QI2"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-qualityIndicator:QI2 
-  a geoWeather:QualityIndicator;
-  skos:prefLabel "QI2";
-skos:topConceptOf geoWeather:QualityIndicator;
-  .
-
-
-
-weatherMetric:GlobalRadiationDailySumWhm2
-    a geoWeather:weatherMetric;
-    skos:prefLabel "GlobalRadiation_DailySum (Wh/m2)"@en;
-    skos:notation "GRDSW2" ; 
-    skos:definition """This provides the DailySum method of the GlobalRadiation in Wh/m2 units.""";
-    weatherMetric:type weatherMetricType:GlobalRadiation;
-    weatherMetric:method measureMethod:DailySum;
-    weatherMetric:unit unit:Wh_per_m2;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
-.
-
-
-measureMethod:DailySum 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailySum";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-unit:Wh_per_m2 
-  a geoWeather:Unit;
-  skos:prefLabel "Wh/m2";
-  skos:topConceptOf geoWeather:Unit;
-  .
-
-
-
 weatherMetric:GlobalRadiationDailySumQI1
-    a geoWeather:weatherMetric;
-    skos:prefLabel "GlobalRadiation_DailySum_QI1"@en;
-    skos:notation "GRDSQI1" ; 
-    skos:definition """This provides the DailySum method of the GlobalRadiation.""";
-    weatherMetric:type weatherMetricType:GlobalRadiation;
-    weatherMetric:method measureMethod:DailySum;
-    weatherMetric:qualityIndicator qualityIndicator:QI1;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailySum ;
+  weatherMetric:qualityIndicator qualityIndicator:QI1 ;
+  weatherMetric:type weatherMetricType:GlobalRadiation ;
+  skos:definition "This provides the DailySum method of the GlobalRadiation." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "GRDSQI1" ;
+  skos:prefLabel "GlobalRadiation_DailySum_QI1"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailySum 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailySum";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-qualityIndicator:QI1 
-  a geoWeather:QualityIndicator;
-  skos:prefLabel "QI1";
-skos:topConceptOf geoWeather:QualityIndicator;
-  .
-
-
-
 weatherMetric:GlobalRadiationDailySumQI2
-    a geoWeather:weatherMetric;
-    skos:prefLabel "GlobalRadiation_DailySum_QI2"@en;
-    skos:notation "GRDSQI2" ; 
-    skos:definition """This provides the DailySum method of the GlobalRadiation.""";
-    weatherMetric:type weatherMetricType:GlobalRadiation;
-    weatherMetric:method measureMethod:DailySum;
-    weatherMetric:qualityIndicator qualityIndicator:QI2;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailySum ;
+  weatherMetric:qualityIndicator qualityIndicator:QI2 ;
+  weatherMetric:type weatherMetricType:GlobalRadiation ;
+  skos:definition "This provides the DailySum method of the GlobalRadiation." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "GRDSQI2" ;
+  skos:prefLabel "GlobalRadiation_DailySum_QI2"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailySum 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailySum";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-qualityIndicator:QI2 
-  a geoWeather:QualityIndicator;
-  skos:prefLabel "QI2";
-skos:topConceptOf geoWeather:QualityIndicator;
-  .
-
-
-
+weatherMetric:GlobalRadiationDailySumWhm2
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailySum ;
+  weatherMetric:type weatherMetricType:GlobalRadiation ;
+  weatherMetric:unit unit:Wh_per_m2 ;
+  skos:definition "This provides the DailySum method of the GlobalRadiation in Wh/m2 units." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "GRDSW2" ;
+  skos:prefLabel "GlobalRadiation_DailySum (Wh/m2)"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
+.
 weatherMetric:HumidityRelDailyAvg
-    a geoWeather:weatherMetric;
-    skos:prefLabel "HumidityRel_DailyAvg"@en;
-    skos:notation "HRDA" ; 
-    skos:definition """This provides the DailyAvg method of the HumidityRel.""";
-    weatherMetric:type weatherMetricType:HumidityRel;
-    weatherMetric:method measureMethod:DailyAvg;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyAvg ;
+  weatherMetric:type weatherMetricType:HumidityRel ;
+  skos:definition "This provides the DailyAvg method of the HumidityRel." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "HRDA" ;
+  skos:prefLabel "HumidityRel_DailyAvg"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyAvg 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyAvg";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-
-
-
-weatherMetric:HumidityRelDailyAvgpct
-    a geoWeather:weatherMetric;
-    skos:prefLabel "HumidityRel_DailyAvg (pct)"@en;
-    skos:notation "HRDA" ; 
-    skos:definition """This provides the DailyAvg method of the HumidityRel in pct units.""";
-    weatherMetric:type weatherMetricType:HumidityRel;
-    weatherMetric:method measureMethod:DailyAvg;
-    weatherMetric:unit unit:pct;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
-.
-
-
-measureMethod:DailyAvg 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyAvg";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-unit:pct 
-  a geoWeather:Unit;
-  skos:prefLabel "pct";
-  skos:topConceptOf geoWeather:Unit;
-  .
-
-
-
 weatherMetric:HumidityRelDailyAvgQI1
-    a geoWeather:weatherMetric;
-    skos:prefLabel "HumidityRel_DailyAvg_QI1"@en;
-    skos:notation "HRDAQI1" ; 
-    skos:definition """This provides the DailyAvg method of the HumidityRel.""";
-    weatherMetric:type weatherMetricType:HumidityRel;
-    weatherMetric:method measureMethod:DailyAvg;
-    weatherMetric:qualityIndicator qualityIndicator:QI1;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyAvg ;
+  weatherMetric:qualityIndicator qualityIndicator:QI1 ;
+  weatherMetric:type weatherMetricType:HumidityRel ;
+  skos:definition "This provides the DailyAvg method of the HumidityRel." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "HRDAQI1" ;
+  skos:prefLabel "HumidityRel_DailyAvg_QI1"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyAvg 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyAvg";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-qualityIndicator:QI1 
-  a geoWeather:QualityIndicator;
-  skos:prefLabel "QI1";
-skos:topConceptOf geoWeather:QualityIndicator;
-  .
-
-
-
 weatherMetric:HumidityRelDailyAvgQI2
-    a geoWeather:weatherMetric;
-    skos:prefLabel "HumidityRel_DailyAvg_QI2"@en;
-    skos:notation "HRDAQI2" ; 
-    skos:definition """This provides the DailyAvg method of the HumidityRel.""";
-    weatherMetric:type weatherMetricType:HumidityRel;
-    weatherMetric:method measureMethod:DailyAvg;
-    weatherMetric:qualityIndicator qualityIndicator:QI2;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyAvg ;
+  weatherMetric:qualityIndicator qualityIndicator:QI2 ;
+  weatherMetric:type weatherMetricType:HumidityRel ;
+  skos:definition "This provides the DailyAvg method of the HumidityRel." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "HRDAQI2" ;
+  skos:prefLabel "HumidityRel_DailyAvg_QI2"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyAvg 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyAvg";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-qualityIndicator:QI2 
-  a geoWeather:QualityIndicator;
-  skos:prefLabel "QI2";
-skos:topConceptOf geoWeather:QualityIndicator;
-  .
-
-
-
-weatherMetric:HumidityRelDailyMaxpct
-    a geoWeather:weatherMetric;
-    skos:prefLabel "HumidityRel_DailyMax (pct)"@en;
-    skos:notation "HRDM" ; 
-    skos:definition """This provides the DailyMax method of the HumidityRel in pct units.""";
-    weatherMetric:type weatherMetricType:HumidityRel;
-    weatherMetric:method measureMethod:DailyMax;
-    weatherMetric:unit unit:pct;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+weatherMetric:HumidityRelDailyAvgpct
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyAvg ;
+  weatherMetric:type weatherMetricType:HumidityRel ;
+  weatherMetric:unit unit:pct ;
+  skos:definition "This provides the DailyAvg method of the HumidityRel in pct units." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "HRDA" ;
+  skos:prefLabel "HumidityRel_DailyAvg (pct)"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyMax 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyMax";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-unit:pct 
-  a geoWeather:Unit;
-  skos:prefLabel "pct";
-  skos:topConceptOf geoWeather:Unit;
-  .
-
-
-
 weatherMetric:HumidityRelDailyMaxQI1
-    a geoWeather:weatherMetric;
-    skos:prefLabel "HumidityRel_DailyMax_QI1"@en;
-    skos:notation "HRDMQI1" ; 
-    skos:definition """This provides the DailyMax method of the HumidityRel.""";
-    weatherMetric:type weatherMetricType:HumidityRel;
-    weatherMetric:method measureMethod:DailyMax;
-    weatherMetric:qualityIndicator qualityIndicator:QI1;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyMax ;
+  weatherMetric:qualityIndicator qualityIndicator:QI1 ;
+  weatherMetric:type weatherMetricType:HumidityRel ;
+  skos:definition "This provides the DailyMax method of the HumidityRel." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "HRDMQI1" ;
+  skos:prefLabel "HumidityRel_DailyMax_QI1"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyMax 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyMax";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-qualityIndicator:QI1 
-  a geoWeather:QualityIndicator;
-  skos:prefLabel "QI1";
-skos:topConceptOf geoWeather:QualityIndicator;
-  .
-
-
-
 weatherMetric:HumidityRelDailyMaxQI2
-    a geoWeather:weatherMetric;
-    skos:prefLabel "HumidityRel_DailyMax_QI2"@en;
-    skos:notation "HRDMQI2" ; 
-    skos:definition """This provides the DailyMax method of the HumidityRel.""";
-    weatherMetric:type weatherMetricType:HumidityRel;
-    weatherMetric:method measureMethod:DailyMax;
-    weatherMetric:qualityIndicator qualityIndicator:QI2;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyMax ;
+  weatherMetric:qualityIndicator qualityIndicator:QI2 ;
+  weatherMetric:type weatherMetricType:HumidityRel ;
+  skos:definition "This provides the DailyMax method of the HumidityRel." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "HRDMQI2" ;
+  skos:prefLabel "HumidityRel_DailyMax_QI2"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyMax 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyMax";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-qualityIndicator:QI2 
-  a geoWeather:QualityIndicator;
-  skos:prefLabel "QI2";
-skos:topConceptOf geoWeather:QualityIndicator;
-  .
-
-
-
-weatherMetric:HumidityRelDailyMinpct
-    a geoWeather:weatherMetric;
-    skos:prefLabel "HumidityRel_DailyMin (pct)"@en;
-    skos:notation "HRDM" ; 
-    skos:definition """This provides the DailyMin method of the HumidityRel in pct units.""";
-    weatherMetric:type weatherMetricType:HumidityRel;
-    weatherMetric:method measureMethod:DailyMin;
-    weatherMetric:unit unit:pct;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+weatherMetric:HumidityRelDailyMaxpct
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyMax ;
+  weatherMetric:type weatherMetricType:HumidityRel ;
+  weatherMetric:unit unit:pct ;
+  skos:definition "This provides the DailyMax method of the HumidityRel in pct units." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "HRDM" ;
+  skos:prefLabel "HumidityRel_DailyMax (pct)"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyMin 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyMin";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-unit:pct 
-  a geoWeather:Unit;
-  skos:prefLabel "pct";
-  skos:topConceptOf geoWeather:Unit;
-  .
-
-
-
 weatherMetric:HumidityRelDailyMinQI1
-    a geoWeather:weatherMetric;
-    skos:prefLabel "HumidityRel_DailyMin_QI1"@en;
-    skos:notation "HRDMQI1" ; 
-    skos:definition """This provides the DailyMin method of the HumidityRel.""";
-    weatherMetric:type weatherMetricType:HumidityRel;
-    weatherMetric:method measureMethod:DailyMin;
-    weatherMetric:qualityIndicator qualityIndicator:QI1;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyMin ;
+  weatherMetric:qualityIndicator qualityIndicator:QI1 ;
+  weatherMetric:type weatherMetricType:HumidityRel ;
+  skos:definition "This provides the DailyMin method of the HumidityRel." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "HRDMQI1" ;
+  skos:prefLabel "HumidityRel_DailyMin_QI1"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyMin 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyMin";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-qualityIndicator:QI1 
-  a geoWeather:QualityIndicator;
-  skos:prefLabel "QI1";
-skos:topConceptOf geoWeather:QualityIndicator;
-  .
-
-
-
 weatherMetric:HumidityRelDailyMinQI2
-    a geoWeather:weatherMetric;
-    skos:prefLabel "HumidityRel_DailyMin_QI2"@en;
-    skos:notation "HRDMQI2" ; 
-    skos:definition """This provides the DailyMin method of the HumidityRel.""";
-    weatherMetric:type weatherMetricType:HumidityRel;
-    weatherMetric:method measureMethod:DailyMin;
-    weatherMetric:qualityIndicator qualityIndicator:QI2;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyMin ;
+  weatherMetric:qualityIndicator qualityIndicator:QI2 ;
+  weatherMetric:type weatherMetricType:HumidityRel ;
+  skos:definition "This provides the DailyMin method of the HumidityRel." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "HRDMQI2" ;
+  skos:prefLabel "HumidityRel_DailyMin_QI2"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyMin 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyMin";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-qualityIndicator:QI2 
-  a geoWeather:QualityIndicator;
-  skos:prefLabel "QI2";
-skos:topConceptOf geoWeather:QualityIndicator;
-  .
-
-
-
+weatherMetric:HumidityRelDailyMinpct
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyMin ;
+  weatherMetric:type weatherMetricType:HumidityRel ;
+  weatherMetric:unit unit:pct ;
+  skos:definition "This provides the DailyMin method of the HumidityRel in pct units." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "HRDM" ;
+  skos:prefLabel "HumidityRel_DailyMin (pct)"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
+.
 weatherMetric:PictoCodeDaily
-    a geoWeather:weatherMetric;
-    skos:prefLabel "PictoCode_Daily"@en;
-    skos:notation "PCD" ; 
-    skos:definition """This provides the Daily method of the PictoCode.""";
-    weatherMetric:type weatherMetricType:PictoCode;
-    weatherMetric:method measureMethod:Daily;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:Daily ;
+  weatherMetric:type weatherMetricType:PictoCode ;
+  skos:definition "This provides the Daily method of the PictoCode." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "PCD" ;
+  skos:prefLabel "PictoCode_Daily"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:Daily 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "Daily";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-
-
-
-weatherMetric:PrecipDailySummm
-    a geoWeather:weatherMetric;
-    skos:prefLabel "Precip_DailySum (mm)"@en;
-    skos:notation "PDS" ; 
-    skos:definition """This provides the DailySum method of the Precip in mm units.""";
-    weatherMetric:type weatherMetricType:Precip;
-    weatherMetric:method measureMethod:DailySum;
-    weatherMetric:unit unit:mm;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
-.
-
-
-measureMethod:DailySum 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailySum";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-unit:mm 
-  a geoWeather:Unit;
-  skos:prefLabel "mm";
-  skos:topConceptOf geoWeather:Unit;
-  .
-
-
-
 weatherMetric:PrecipDailySumQI1
-    a geoWeather:weatherMetric;
-    skos:prefLabel "Precip_DailySum_QI1"@en;
-    skos:notation "PDSQI1" ; 
-    skos:definition """This provides the DailySum method of the Precip.""";
-    weatherMetric:type weatherMetricType:Precip;
-    weatherMetric:method measureMethod:DailySum;
-    weatherMetric:qualityIndicator qualityIndicator:QI1;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailySum ;
+  weatherMetric:qualityIndicator qualityIndicator:QI1 ;
+  weatherMetric:type weatherMetricType:Precip ;
+  skos:definition "This provides the DailySum method of the Precip." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "PDSQI1" ;
+  skos:prefLabel "Precip_DailySum_QI1"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailySum 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailySum";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-qualityIndicator:QI1 
-  a geoWeather:QualityIndicator;
-  skos:prefLabel "QI1";
-skos:topConceptOf geoWeather:QualityIndicator;
-  .
-
-
-
 weatherMetric:PrecipDailySumQI2
-    a geoWeather:weatherMetric;
-    skos:prefLabel "Precip_DailySum_QI2"@en;
-    skos:notation "PDSQI2" ; 
-    skos:definition """This provides the DailySum method of the Precip.""";
-    weatherMetric:type weatherMetricType:Precip;
-    weatherMetric:method measureMethod:DailySum;
-    weatherMetric:qualityIndicator qualityIndicator:QI2;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailySum ;
+  weatherMetric:qualityIndicator qualityIndicator:QI2 ;
+  weatherMetric:type weatherMetricType:Precip ;
+  skos:definition "This provides the DailySum method of the Precip." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "PDSQI2" ;
+  skos:prefLabel "Precip_DailySum_QI2"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailySum 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailySum";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-qualityIndicator:QI2 
-  a geoWeather:QualityIndicator;
-  skos:prefLabel "QI2";
-skos:topConceptOf geoWeather:QualityIndicator;
-  .
-
-
-
+weatherMetric:PrecipDailySummm
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailySum ;
+  weatherMetric:type weatherMetricType:Precip ;
+  weatherMetric:unit unit:mm ;
+  skos:definition "This provides the DailySum method of the Precip in mm units." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "PDS" ;
+  skos:prefLabel "Precip_DailySum (mm)"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
+.
 weatherMetric:PrecipDurationDailySumh
-    a geoWeather:weatherMetric;
-    skos:prefLabel "PrecipDuration_DailySum (h)"@en;
-    skos:notation "PDDS" ; 
-    skos:definition """This provides the DailySum method of the PrecipDuration in h units.""";
-    weatherMetric:type weatherMetricType:PrecipDuration;
-    weatherMetric:method measureMethod:DailySum;
-    weatherMetric:unit unit:h;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailySum ;
+  weatherMetric:type weatherMetricType:PrecipDuration ;
+  weatherMetric:unit unit:h ;
+  skos:definition "This provides the DailySum method of the PrecipDuration in h units." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "PDDS" ;
+  skos:prefLabel "PrecipDuration_DailySum (h)"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailySum 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailySum";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-unit:h 
-  a geoWeather:Unit;
-  skos:prefLabel "h";
-  skos:topConceptOf geoWeather:Unit;
-  .
-
-
-
 weatherMetric:PrecipProbabilityDailypct
-    a geoWeather:weatherMetric;
-    skos:prefLabel "PrecipProbability_Daily (pct)"@en;
-    skos:notation "PPD" ; 
-    skos:definition """This provides the Daily method of the PrecipProbability in pct units.""";
-    weatherMetric:type weatherMetricType:PrecipProbability;
-    weatherMetric:method measureMethod:Daily;
-    weatherMetric:unit unit:pct;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:Daily ;
+  weatherMetric:type weatherMetricType:PrecipProbability ;
+  weatherMetric:unit unit:pct ;
+  skos:definition "This provides the Daily method of the PrecipProbability in pct units." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "PPD" ;
+  skos:prefLabel "PrecipProbability_Daily (pct)"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:Daily 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "Daily";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-unit:pct 
-  a geoWeather:Unit;
-  skos:prefLabel "pct";
-  skos:topConceptOf geoWeather:Unit;
-  .
-
-
-
-weatherMetric:PredictabilityDailypct
-    a geoWeather:weatherMetric;
-    skos:prefLabel "Predictability_Daily (pct)"@en;
-    skos:notation "PD" ; 
-    skos:definition """This provides the Daily method of the Predictability in pct units.""";
-    weatherMetric:type weatherMetricType:Predictability;
-    weatherMetric:method measureMethod:Daily;
-    weatherMetric:unit unit:pct;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
-.
-
-
-measureMethod:Daily 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "Daily";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-unit:pct 
-  a geoWeather:Unit;
-  skos:prefLabel "pct";
-  skos:topConceptOf geoWeather:Unit;
-  .
-
-
-
 weatherMetric:PredictabilityClassDaily
-    a geoWeather:weatherMetric;
-    skos:prefLabel "PredictabilityClass_Daily"@en;
-    skos:notation "PCD" ; 
-    skos:definition """This provides the Daily method of the PredictabilityClass.""";
-    weatherMetric:type weatherMetricType:PredictabilityClass;
-    weatherMetric:method measureMethod:Daily;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:Daily ;
+  weatherMetric:type weatherMetricType:PredictabilityClass ;
+  skos:definition "This provides the Daily method of the PredictabilityClass." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "PCD" ;
+  skos:prefLabel "PredictabilityClass_Daily"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:Daily 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "Daily";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-
-
-
+weatherMetric:PredictabilityDailypct
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:Daily ;
+  weatherMetric:type weatherMetricType:Predictability ;
+  weatherMetric:unit unit:pct ;
+  skos:definition "This provides the Daily method of the Predictability in pct units." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "PD" ;
+  skos:prefLabel "Predictability_Daily (pct)"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
+.
 weatherMetric:ShowerProbabilityDailyMaxpct
-    a geoWeather:weatherMetric;
-    skos:prefLabel "ShowerProbability_DailyMax (pct)"@en;
-    skos:notation "SPDM" ; 
-    skos:definition """This provides the DailyMax method of the ShowerProbability in pct units.""";
-    weatherMetric:type weatherMetricType:ShowerProbability;
-    weatherMetric:method measureMethod:DailyMax;
-    weatherMetric:unit unit:pct;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyMax ;
+  weatherMetric:type weatherMetricType:ShowerProbability ;
+  weatherMetric:unit unit:pct ;
+  skos:definition "This provides the DailyMax method of the ShowerProbability in pct units." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "SPDM" ;
+  skos:prefLabel "ShowerProbability_DailyMax (pct)"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyMax 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyMax";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-unit:pct 
-  a geoWeather:Unit;
-  skos:prefLabel "pct";
-  skos:topConceptOf geoWeather:Unit;
-  .
-
-
-
 weatherMetric:SunshineDurationDailySumh
-    a geoWeather:weatherMetric;
-    skos:prefLabel "SunshineDuration_DailySum (h)"@en;
-    skos:notation "SDDS" ; 
-    skos:definition """This provides the DailySum method of the SunshineDuration in h units.""";
-    weatherMetric:type weatherMetricType:SunshineDuration;
-    weatherMetric:method measureMethod:DailySum;
-    weatherMetric:unit unit:h;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailySum ;
+  weatherMetric:type weatherMetricType:SunshineDuration ;
+  weatherMetric:unit unit:h ;
+  skos:definition "This provides the DailySum method of the SunshineDuration in h units." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "SDDS" ;
+  skos:prefLabel "SunshineDuration_DailySum (h)"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailySum 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailySum";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-unit:h 
-  a geoWeather:Unit;
-  skos:prefLabel "h";
-  skos:topConceptOf geoWeather:Unit;
-  .
-
-
-
 weatherMetric:TempAirDailyAvgC
-    a geoWeather:weatherMetric;
-    skos:prefLabel "TempAir_DailyAvg (C)"@en;
-    skos:notation "TADAC" ; 
-    skos:definition """This provides the DailyAvg method of the TempAir in C units.""";
-    weatherMetric:type weatherMetricType:TempAir;
-    weatherMetric:method measureMethod:DailyAvg;
-    weatherMetric:unit unit:C;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyAvg ;
+  weatherMetric:type weatherMetricType:TempAir ;
+  weatherMetric:unit unit:C ;
+  skos:definition "This provides the DailyAvg method of the TempAir in C units." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "TADAC" ;
+  skos:prefLabel "TempAir_DailyAvg (C)"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyAvg 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyAvg";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-unit:C 
-  a geoWeather:Unit;
-  skos:prefLabel "C";
-  skos:topConceptOf geoWeather:Unit;
-  .
-
-
-
 weatherMetric:TempAirDailyAvgQI1
-    a geoWeather:weatherMetric;
-    skos:prefLabel "TempAir_DailyAvg_QI1"@en;
-    skos:notation "TADAQI1" ; 
-    skos:definition """This provides the DailyAvg method of the TempAir.""";
-    weatherMetric:type weatherMetricType:TempAir;
-    weatherMetric:method measureMethod:DailyAvg;
-    weatherMetric:qualityIndicator qualityIndicator:QI1;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyAvg ;
+  weatherMetric:qualityIndicator qualityIndicator:QI1 ;
+  weatherMetric:type weatherMetricType:TempAir ;
+  skos:definition "This provides the DailyAvg method of the TempAir." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "TADAQI1" ;
+  skos:prefLabel "TempAir_DailyAvg_QI1"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyAvg 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyAvg";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-qualityIndicator:QI1 
-  a geoWeather:QualityIndicator;
-  skos:prefLabel "QI1";
-skos:topConceptOf geoWeather:QualityIndicator;
-  .
-
-
-
 weatherMetric:TempAirDailyAvgQI2
-    a geoWeather:weatherMetric;
-    skos:prefLabel "TempAir_DailyAvg_QI2"@en;
-    skos:notation "TADAQI2" ; 
-    skos:definition """This provides the DailyAvg method of the TempAir.""";
-    weatherMetric:type weatherMetricType:TempAir;
-    weatherMetric:method measureMethod:DailyAvg;
-    weatherMetric:qualityIndicator qualityIndicator:QI2;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyAvg ;
+  weatherMetric:qualityIndicator qualityIndicator:QI2 ;
+  weatherMetric:type weatherMetricType:TempAir ;
+  skos:definition "This provides the DailyAvg method of the TempAir." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "TADAQI2" ;
+  skos:prefLabel "TempAir_DailyAvg_QI2"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyAvg 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyAvg";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-qualityIndicator:QI2 
-  a geoWeather:QualityIndicator;
-  skos:prefLabel "QI2";
-skos:topConceptOf geoWeather:QualityIndicator;
-  .
-
-
-
 weatherMetric:TempAirDailyMaxC
-    a geoWeather:weatherMetric;
-    skos:prefLabel "TempAir_DailyMax (C)"@en;
-    skos:notation "TADMC" ; 
-    skos:definition """This provides the DailyMax method of the TempAir in C units.""";
-    weatherMetric:type weatherMetricType:TempAir;
-    weatherMetric:method measureMethod:DailyMax;
-    weatherMetric:unit unit:C;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyMax ;
+  weatherMetric:type weatherMetricType:TempAir ;
+  weatherMetric:unit unit:C ;
+  skos:definition "This provides the DailyMax method of the TempAir in C units." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "TADMC" ;
+  skos:prefLabel "TempAir_DailyMax (C)"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyMax 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyMax";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-unit:C 
-  a geoWeather:Unit;
-  skos:prefLabel "C";
-  skos:topConceptOf geoWeather:Unit;
-  .
-
-
-
 weatherMetric:TempAirDailyMinC
-    a geoWeather:weatherMetric;
-    skos:prefLabel "TempAir_DailyMin (C)"@en;
-    skos:notation "TADMC" ; 
-    skos:definition """This provides the DailyMin method of the TempAir in C units.""";
-    weatherMetric:type weatherMetricType:TempAir;
-    weatherMetric:method measureMethod:DailyMin;
-    weatherMetric:unit unit:C;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyMin ;
+  weatherMetric:type weatherMetricType:TempAir ;
+  weatherMetric:unit unit:C ;
+  skos:definition "This provides the DailyMin method of the TempAir in C units." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "TADMC" ;
+  skos:prefLabel "TempAir_DailyMin (C)"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyMin 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyMin";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-unit:C 
-  a geoWeather:Unit;
-  skos:prefLabel "C";
-  skos:topConceptOf geoWeather:Unit;
-  .
-
-
-
 weatherMetric:TempAirDaytimeMaxC
-    a geoWeather:weatherMetric;
-    skos:prefLabel "TempAir_DaytimeMax (C)"@en;
-    skos:notation "TADMC" ; 
-    skos:definition """This provides the DaytimeMax method of the TempAir in C units.""";
-    weatherMetric:type weatherMetricType:TempAir;
-    weatherMetric:method measureMethod:DaytimeMax;
-    weatherMetric:unit unit:C;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DaytimeMax ;
+  weatherMetric:type weatherMetricType:TempAir ;
+  weatherMetric:unit unit:C ;
+  skos:definition "This provides the DaytimeMax method of the TempAir in C units." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "TADMC" ;
+  skos:prefLabel "TempAir_DaytimeMax (C)"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DaytimeMax 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DaytimeMax";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-unit:C 
-  a geoWeather:Unit;
-  skos:prefLabel "C";
-  skos:topConceptOf geoWeather:Unit;
-  .
-
-
-
 weatherMetric:TempAirDaytimeMaxQI1
-    a geoWeather:weatherMetric;
-    skos:prefLabel "TempAir_DaytimeMax_QI1"@en;
-    skos:notation "TADMQI1" ; 
-    skos:definition """This provides the DaytimeMax method of the TempAir.""";
-    weatherMetric:type weatherMetricType:TempAir;
-    weatherMetric:method measureMethod:DaytimeMax;
-    weatherMetric:qualityIndicator qualityIndicator:QI1;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DaytimeMax ;
+  weatherMetric:qualityIndicator qualityIndicator:QI1 ;
+  weatherMetric:type weatherMetricType:TempAir ;
+  skos:definition "This provides the DaytimeMax method of the TempAir." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "TADMQI1" ;
+  skos:prefLabel "TempAir_DaytimeMax_QI1"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DaytimeMax 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DaytimeMax";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-qualityIndicator:QI1 
-  a geoWeather:QualityIndicator;
-  skos:prefLabel "QI1";
-skos:topConceptOf geoWeather:QualityIndicator;
-  .
-
-
-
 weatherMetric:TempAirDaytimeMaxQI2
-    a geoWeather:weatherMetric;
-    skos:prefLabel "TempAir_DaytimeMax_QI2"@en;
-    skos:notation "TADMQI2" ; 
-    skos:definition """This provides the DaytimeMax method of the TempAir.""";
-    weatherMetric:type weatherMetricType:TempAir;
-    weatherMetric:method measureMethod:DaytimeMax;
-    weatherMetric:qualityIndicator qualityIndicator:QI2;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DaytimeMax ;
+  weatherMetric:qualityIndicator qualityIndicator:QI2 ;
+  weatherMetric:type weatherMetricType:TempAir ;
+  skos:definition "This provides the DaytimeMax method of the TempAir." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "TADMQI2" ;
+  skos:prefLabel "TempAir_DaytimeMax_QI2"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DaytimeMax 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DaytimeMax";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-qualityIndicator:QI2 
-  a geoWeather:QualityIndicator;
-  skos:prefLabel "QI2";
-skos:topConceptOf geoWeather:QualityIndicator;
-  .
-
-
-
 weatherMetric:TempAirNighttimeMinC
-    a geoWeather:weatherMetric;
-    skos:prefLabel "TempAir_NighttimeMin (C)"@en;
-    skos:notation "TANMC" ; 
-    skos:definition """This provides the NighttimeMin method of the TempAir in C units.""";
-    weatherMetric:type weatherMetricType:TempAir;
-    weatherMetric:method measureMethod:NighttimeMin;
-    weatherMetric:unit unit:C;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:NighttimeMin ;
+  weatherMetric:type weatherMetricType:TempAir ;
+  weatherMetric:unit unit:C ;
+  skos:definition "This provides the NighttimeMin method of the TempAir in C units." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "TANMC" ;
+  skos:prefLabel "TempAir_NighttimeMin (C)"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:NighttimeMin 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "NighttimeMin";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-unit:C 
-  a geoWeather:Unit;
-  skos:prefLabel "C";
-  skos:topConceptOf geoWeather:Unit;
-  .
-
-
-
 weatherMetric:TempAirNighttimeMinQI1
-    a geoWeather:weatherMetric;
-    skos:prefLabel "TempAir_NighttimeMin_QI1"@en;
-    skos:notation "TANMQI1" ; 
-    skos:definition """This provides the NighttimeMin method of the TempAir.""";
-    weatherMetric:type weatherMetricType:TempAir;
-    weatherMetric:method measureMethod:NighttimeMin;
-    weatherMetric:qualityIndicator qualityIndicator:QI1;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:NighttimeMin ;
+  weatherMetric:qualityIndicator qualityIndicator:QI1 ;
+  weatherMetric:type weatherMetricType:TempAir ;
+  skos:definition "This provides the NighttimeMin method of the TempAir." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "TANMQI1" ;
+  skos:prefLabel "TempAir_NighttimeMin_QI1"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:NighttimeMin 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "NighttimeMin";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-qualityIndicator:QI1 
-  a geoWeather:QualityIndicator;
-  skos:prefLabel "QI1";
-skos:topConceptOf geoWeather:QualityIndicator;
-  .
-
-
-
 weatherMetric:TempAirNighttimeMinQI2
-    a geoWeather:weatherMetric;
-    skos:prefLabel "TempAir_NighttimeMin_QI2"@en;
-    skos:notation "TANMQI2" ; 
-    skos:definition """This provides the NighttimeMin method of the TempAir.""";
-    weatherMetric:type weatherMetricType:TempAir;
-    weatherMetric:method measureMethod:NighttimeMin;
-    weatherMetric:qualityIndicator qualityIndicator:QI2;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:NighttimeMin ;
+  weatherMetric:qualityIndicator qualityIndicator:QI2 ;
+  weatherMetric:type weatherMetricType:TempAir ;
+  skos:definition "This provides the NighttimeMin method of the TempAir." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "TANMQI2" ;
+  skos:prefLabel "TempAir_NighttimeMin_QI2"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:NighttimeMin 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "NighttimeMin";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-qualityIndicator:QI2 
-  a geoWeather:QualityIndicator;
-  skos:prefLabel "QI2";
-skos:topConceptOf geoWeather:QualityIndicator;
-  .
-
-
-
 weatherMetric:ThunderstormProbabilityDailyMaxpct
-    a geoWeather:weatherMetric;
-    skos:prefLabel "ThunderstormProbability_DailyMax (pct)"@en;
-    skos:notation "TPDM" ; 
-    skos:definition """This provides the DailyMax method of the ThunderstormProbability in pct units.""";
-    weatherMetric:type weatherMetricType:ThunderstormProbability;
-    weatherMetric:method measureMethod:DailyMax;
-    weatherMetric:unit unit:pct;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyMax ;
+  weatherMetric:type weatherMetricType:ThunderstormProbability ;
+  weatherMetric:unit unit:pct ;
+  skos:definition "This provides the DailyMax method of the ThunderstormProbability in pct units." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "TPDM" ;
+  skos:prefLabel "ThunderstormProbability_DailyMax (pct)"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyMax 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyMax";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-unit:pct 
-  a geoWeather:Unit;
-  skos:prefLabel "pct";
-  skos:topConceptOf geoWeather:Unit;
-  .
-
-
-
 weatherMetric:WindDirectionDailyAvgDeg
-    a geoWeather:weatherMetric;
-    skos:prefLabel "WindDirection_DailyAvg (Deg)"@en;
-    skos:notation "WDDAD" ; 
-    skos:definition """This provides the DailyAvg method of the WindDirection in Deg units.""";
-    weatherMetric:type weatherMetricType:WindDirection;
-    weatherMetric:method measureMethod:DailyAvg;
-    weatherMetric:unit unit:Deg;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyAvg ;
+  weatherMetric:type weatherMetricType:WindDirection ;
+  weatherMetric:unit unit:Deg ;
+  skos:definition "This provides the DailyAvg method of the WindDirection in Deg units." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "WDDAD" ;
+  skos:prefLabel "WindDirection_DailyAvg (Deg)"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyAvg 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyAvg";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-unit:Deg 
-  a geoWeather:Unit;
-  skos:prefLabel "Deg";
-  skos:topConceptOf geoWeather:Unit;
-  .
-
-
-
 weatherMetric:WindGustDailyMaxms
-    a geoWeather:weatherMetric;
-    skos:prefLabel "WindGust_DailyMax (m/s)"@en;
-    skos:notation "WGDM" ; 
-    skos:definition """This provides the DailyMax method of the WindGust in m/s units.""";
-    weatherMetric:type weatherMetricType:WindGust;
-    weatherMetric:method measureMethod:DailyMax;
-    weatherMetric:unit unit:m_per_s;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyMax ;
+  weatherMetric:type weatherMetricType:WindGust ;
+  weatherMetric:unit unit:m_per_s ;
+  skos:definition "This provides the DailyMax method of the WindGust in m/s units." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "WGDM" ;
+  skos:prefLabel "WindGust_DailyMax (m/s)"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyMax 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyMax";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-unit:m_per_s 
-  a geoWeather:Unit;
-  skos:prefLabel "m/s";
-  skos:topConceptOf geoWeather:Unit;
-  .
-
-
-
-weatherMetric:WindSpeedDailyAvgms
-    a geoWeather:weatherMetric;
-    skos:prefLabel "WindSpeed_DailyAvg (m/s)"@en;
-    skos:notation "WSDA" ; 
-    skos:definition """This provides the DailyAvg method of the WindSpeed in m/s units.""";
-    weatherMetric:type weatherMetricType:WindSpeed;
-    weatherMetric:method measureMethod:DailyAvg;
-    weatherMetric:unit unit:m_per_s;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
-.
-
-
-measureMethod:DailyAvg 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyAvg";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-unit:m_per_s 
-  a geoWeather:Unit;
-  skos:prefLabel "m/s";
-  skos:topConceptOf geoWeather:Unit;
-  .
-
-
-
 weatherMetric:WindSpeedDailyAvgQI1
-    a geoWeather:weatherMetric;
-    skos:prefLabel "WindSpeed_DailyAvg_QI1"@en;
-    skos:notation "WSDAQI1" ; 
-    skos:definition """This provides the DailyAvg method of the WindSpeed.""";
-    weatherMetric:type weatherMetricType:WindSpeed;
-    weatherMetric:method measureMethod:DailyAvg;
-    weatherMetric:qualityIndicator qualityIndicator:QI1;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyAvg ;
+  weatherMetric:qualityIndicator qualityIndicator:QI1 ;
+  weatherMetric:type weatherMetricType:WindSpeed ;
+  skos:definition "This provides the DailyAvg method of the WindSpeed." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "WSDAQI1" ;
+  skos:prefLabel "WindSpeed_DailyAvg_QI1"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyAvg 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyAvg";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-qualityIndicator:QI1 
-  a geoWeather:QualityIndicator;
-  skos:prefLabel "QI1";
-skos:topConceptOf geoWeather:QualityIndicator;
-  .
-
-
-
 weatherMetric:WindSpeedDailyAvgQI2
-    a geoWeather:weatherMetric;
-    skos:prefLabel "WindSpeed_DailyAvg_QI2"@en;
-    skos:notation "WSDAQI2" ; 
-    skos:definition """This provides the DailyAvg method of the WindSpeed.""";
-    weatherMetric:type weatherMetricType:WindSpeed;
-    weatherMetric:method measureMethod:DailyAvg;
-    weatherMetric:qualityIndicator qualityIndicator:QI2;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyAvg ;
+  weatherMetric:qualityIndicator qualityIndicator:QI2 ;
+  weatherMetric:type weatherMetricType:WindSpeed ;
+  skos:definition "This provides the DailyAvg method of the WindSpeed." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "WSDAQI2" ;
+  skos:prefLabel "WindSpeed_DailyAvg_QI2"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyAvg 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyAvg";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-qualityIndicator:QI2 
-  a geoWeather:QualityIndicator;
-  skos:prefLabel "QI2";
-skos:topConceptOf geoWeather:QualityIndicator;
-  .
-
-
-
-weatherMetric:WindSpeedDailyMaxms
-    a geoWeather:weatherMetric;
-    skos:prefLabel "WindSpeed_DailyMax (m/s)"@en;
-    skos:notation "WSDM" ; 
-    skos:definition """This provides the DailyMax method of the WindSpeed in m/s units.""";
-    weatherMetric:type weatherMetricType:WindSpeed;
-    weatherMetric:method measureMethod:DailyMax;
-    weatherMetric:unit unit:m_per_s;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+weatherMetric:WindSpeedDailyAvgms
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyAvg ;
+  weatherMetric:type weatherMetricType:WindSpeed ;
+  weatherMetric:unit unit:m_per_s ;
+  skos:definition "This provides the DailyAvg method of the WindSpeed in m/s units." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "WSDA" ;
+  skos:prefLabel "WindSpeed_DailyAvg (m/s)"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyMax 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyMax";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-unit:m_per_s 
-  a geoWeather:Unit;
-  skos:prefLabel "m/s";
-  skos:topConceptOf geoWeather:Unit;
-  .
-
-
-
 weatherMetric:WindSpeedDailyMaxQI1
-    a geoWeather:weatherMetric;
-    skos:prefLabel "WindSpeed_DailyMax_QI1"@en;
-    skos:notation "WSDMQI1" ; 
-    skos:definition """This provides the DailyMax method of the WindSpeed.""";
-    weatherMetric:type weatherMetricType:WindSpeed;
-    weatherMetric:method measureMethod:DailyMax;
-    weatherMetric:qualityIndicator qualityIndicator:QI1;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyMax ;
+  weatherMetric:qualityIndicator qualityIndicator:QI1 ;
+  weatherMetric:type weatherMetricType:WindSpeed ;
+  skos:definition "This provides the DailyMax method of the WindSpeed." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "WSDMQI1" ;
+  skos:prefLabel "WindSpeed_DailyMax_QI1"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyMax 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyMax";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-qualityIndicator:QI1 
-  a geoWeather:QualityIndicator;
-  skos:prefLabel "QI1";
-skos:topConceptOf geoWeather:QualityIndicator;
-  .
-
-
-
 weatherMetric:WindSpeedDailyMaxQI2
-    a geoWeather:weatherMetric;
-    skos:prefLabel "WindSpeed_DailyMax_QI2"@en;
-    skos:notation "WSDMQI2" ; 
-    skos:definition """This provides the DailyMax method of the WindSpeed.""";
-    weatherMetric:type weatherMetricType:WindSpeed;
-    weatherMetric:method measureMethod:DailyMax;
-    weatherMetric:qualityIndicator qualityIndicator:QI2;
-    skos:topConceptOf geoWeather:WeatherMetricScheme;
-    skos:inScheme geoWeather:WeatherMetricScheme ;
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyMax ;
+  weatherMetric:qualityIndicator qualityIndicator:QI2 ;
+  weatherMetric:type weatherMetricType:WindSpeed ;
+  skos:definition "This provides the DailyMax method of the WindSpeed." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "WSDMQI2" ;
+  skos:prefLabel "WindSpeed_DailyMax_QI2"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
 .
-
-
-measureMethod:DailyMax 
-  a geoWeather:MeasureMethod;
-  skos:prefLabel "DailyMax";
-  skos:topConceptOf geoWeather:MeasureMethodSchema;
-  .
-    
-qualityIndicator:QI2 
-  a geoWeather:QualityIndicator;
-  skos:prefLabel "QI2";
-skos:topConceptOf geoWeather:QualityIndicator;
-  .
+weatherMetric:WindSpeedDailyMaxms
+  rdf:type geoWeather:weatherMetric ;
+  weatherMetric:method measureMethod:DailyMax ;
+  weatherMetric:type weatherMetricType:WindSpeed ;
+  weatherMetric:unit unit:m_per_s ;
+  skos:definition "This provides the DailyMax method of the WindSpeed in m/s units." ;
+  skos:inScheme geoWeather:WeatherMetricScheme ;
+  skos:notation "WSDM" ;
+  skos:prefLabel "WindSpeed_DailyMax (m/s)"@en ;
+  skos:topConceptOf geoWeather:WeatherMetricScheme ;
+.
