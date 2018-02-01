@@ -2,6 +2,8 @@
 # imports: http://data.syngenta.org/def/geoWeather/core
 # imports: http://data.syngenta.org/def/geoWeather/measureMethods
 # imports: http://data.syngenta.org/def/geoWeather/weatherMetricTypes
+# imports: http://data.syngenta.org/def/upper
+# imports: http://purl.org/dc/terms/
 
 @prefix measure: <http://data.syngenta.org/def/Measure/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -65,6 +67,8 @@ unit:pct
   owl:imports <http://data.syngenta.org/def/geoWeather/core> ;
   owl:imports <http://data.syngenta.org/def/geoWeather/measureMethods> ;
   owl:imports <http://data.syngenta.org/def/geoWeather/weatherMetricTypes> ;
+  owl:imports <http://data.syngenta.org/def/upper> ;
+  owl:imports <http://purl.org/dc/terms/> ;
 .
 weatherMetrics:CloudcoverDailyAvgpct
   rdf:type weatherMetrics:WeatherMetric ;

@@ -43,7 +43,7 @@ entity:code
   rdfs:domain geoWeather:Entity ;
   rdfs:label "Code" ;
   rdfs:range xsd:string ;
-  rdfs:subClassOf skos:notation ;
+  rdfs:subPropertyOf skos:notation ;
 .
 entity:description
   rdf:type rdf:Property ;
@@ -52,7 +52,7 @@ entity:description
   rdfs:domain geoWeather:Entity ;
   rdfs:label "Description" ;
   rdfs:range xsd:string ;
-  rdfs:subClassOf skos:comment ;
+  rdfs:subPropertyOf skos:definition ;
 .
 entity:hasSample
   rdf:type rdf:Property ;
@@ -61,7 +61,7 @@ entity:hasSample
   rdfs:domain owl:Class ;
   rdfs:label "Has Sample" ;
   rdfs:range xsd:string ;
-  rdfs:subClassOf skos:notation ;
+  rdfs:subPropertyOf skos:notation ;
 .
 entity:name
   rdf:type rdf:Property ;
@@ -70,7 +70,7 @@ entity:name
   rdfs:domain geoWeather:Entity ;
   rdfs:label "Name" ;
   rdfs:range xsd:string ;
-  rdfs:subClassOf skos:prefLabel ;
+  rdfs:subPropertyOf skos:prefLabel ;
 .
 <http://data.syngenta.org/def/geoWeather>
   rdf:type owl:Ontology ;
@@ -245,6 +245,7 @@ geoSet:polygon
 <http://data.syngenta.org/def/geoWeather/core>
   rdf:type owl:Ontology ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionIRI <http://data.syngenta.org/def/geoWeather/core/v.0.0.1> ;
 .
 geoWeather:DataSet
   rdf:type owl:Class ;
