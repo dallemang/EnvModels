@@ -319,13 +319,6 @@ geoWeather:Measure
   rdfs:subClassOf geoWeather:Entity ;
   rdfs:subClassOf qb:Dimension ;
 .
-geoWeather:MeasureMethod
-  rdf:type owl:Class ;
-  rdfs:comment "This identifies the specific computational (or observation) method for determining the data, such as max, min, average, etc."@en ;
-  rdfs:label "Measure Method" ;
-  rdfs:subClassOf geoWeather:Entity ;
-  rdfs:subClassOf skos:ConceptScheme ;
-.
 geoWeather:MeasureType
   rdf:type owl:Class ;
   rdfs:comment "This identifies the specific quality being measured, such as air temperature."@en ;
