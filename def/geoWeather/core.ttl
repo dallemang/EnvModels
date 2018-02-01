@@ -98,43 +98,6 @@ entity:name
   owl:versionIRI <http://data.syngenta.org/def/geoWeather/v0.1.0> ;
   owl:versionInfo "v2.1.0" ;
 .
-geoWeather:DataSet
-  rdf:type owl:Class ;
-  rdfs:comment "This identifies a set of data as a W3C data cube."@en ;
-  rdfs:label "DataSet" ;
-  rdfs:subClassOf geoWeather:Entity ;
-  rdfs:subClassOf qb:DataSet ;
-.
-geoWeather:DataSetRelease
-  rdf:type owl:Class ;
-  rdfs:comment "This is a synonym for Observation Group, though OG should be the preferred term."@en ;
-  rdfs:label "DataSetRelease" ;
-  rdfs:subClassOf geoWeather:Entity ;
-  rdfs:subClassOf qb:ObservationGroup ;
-  owl:sameAs geoWeather:ObservationGroup ;
-.
-geoWeather:Entity
-  rdf:type owl:Class ;
-  rdfs:comment "This (typically) abstract class provides support for name, code, and description content."@en ;
-  rdfs:label "Entity" ;
-  rdfs:subClassOf skos:prefLabel ;
-.
-geoWeather:GeoPoint
-  rdf:type owl:Class ;
-  entity:hasSample """
- Sample geoPoint:
- geoPoint:SeattleWA
-      a geoWeather:geoPoint;
- 	  geoPoint:name \"Seattle, WA\"@en;
- 	  geoPoint:latitude \"47.6062\"^^xsd:double; 
- 	  geoPoint:longitude \"-122.3321\"^^xsd:double;
- 	  geoPoint:altitude \"157.886\"^^xsd:double;
- 	.
-""" ;
-  rdfs:comment "A WGS84 based spatial thing using decimal degrees latitude and longitude with altitude given in meters."@en ;
-  rdfs:label "GeoPoint" ;
-  rdfs:subClassOf wgs84:SpatialThing ;
-.
 geoPoint:altitude
   rdf:type rdf:Property ;
   rdfs:comment "The geoWeather altitude in meters above the model surface, based on wgs84."@en ;
@@ -190,34 +153,6 @@ geoPoint:name
   rdfs:domain geoWeather:GeoPoint ;
   rdfs:label "name" ;
   rdfs:subPropertyOf entity:name ;
-.
-geoWeather:GeoSet
-  rdf:type owl:Class ;
-  entity:hasSample """
- Sample geoSet:
- geoSet:WesternHemisphere
-    a geoWeather:geoSet;
- 	  geoSet:name \"Western Hemisphere\"@en;
- 	  geoSet:geoPoints (
-		 [geoPoint:lat \"0\",  geoPoint:long \"0\"],
-       [geoPoint:lat \"0\",  geoPoint:long \"-180\"],
-       [geoPoint:lat \"90\", geoPoint:long \"0\"],
-       [geoPoint:lat \"0\",  geoPoint:long \"0\"]
-       );
- 	.
- 	""" ;
-  entity:hasSample """
- Sample geoSet:
- geoSet:WesternHemisphere
-    a geoWeather:geoSet;
-      geoSet:name \"Western Hemisphere\"@en;
-      geoSet:WKTPolygon \"Polygon(\"0,0 0,-180 90,0 0,0)\";
-    .
-    """ ;
-  rdfs:comment "An ordered sequence of geopoints, along with a reference point."@en ;
-  rdfs:label "GeoSet" ;
-  rdfs:subClassOf geoWeather:geoPoint ;
-  rdfs:subClassOf owl:Collection ;
 .
 geoSet:WKBPolygon
   rdf:type rdf:Property ;
@@ -307,6 +242,75 @@ geoSet:polygon
   rdfs:label "polygon" ;
   rdfs:range xsd:string ;
 .
+<http://data.syngenta.org/def/geoWeather/core>
+  rdf:type owl:Ontology ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+.
+geoWeather:DataSet
+  rdf:type owl:Class ;
+  rdfs:comment "This identifies a set of data as a W3C data cube."@en ;
+  rdfs:label "DataSet" ;
+  rdfs:subClassOf geoWeather:Entity ;
+  rdfs:subClassOf qb:DataSet ;
+.
+geoWeather:DataSetRelease
+  rdf:type owl:Class ;
+  rdfs:comment "This is a synonym for Observation Group, though OG should be the preferred term."@en ;
+  rdfs:label "DataSetRelease" ;
+  rdfs:subClassOf geoWeather:Entity ;
+  rdfs:subClassOf qb:ObservationGroup ;
+  owl:sameAs geoWeather:ObservationGroup ;
+.
+geoWeather:Entity
+  rdf:type owl:Class ;
+  rdfs:comment "This (typically) abstract class provides support for name, code, and description content."@en ;
+  rdfs:label "Entity" ;
+  rdfs:subClassOf skos:prefLabel ;
+.
+geoWeather:GeoPoint
+  rdf:type owl:Class ;
+  entity:hasSample """
+ Sample geoPoint:
+ geoPoint:SeattleWA
+      a geoWeather:geoPoint;
+ 	  geoPoint:name \"Seattle, WA\"@en;
+ 	  geoPoint:latitude \"47.6062\"^^xsd:double; 
+ 	  geoPoint:longitude \"-122.3321\"^^xsd:double;
+ 	  geoPoint:altitude \"157.886\"^^xsd:double;
+ 	.
+""" ;
+  rdfs:comment "A WGS84 based spatial thing using decimal degrees latitude and longitude with altitude given in meters."@en ;
+  rdfs:label "GeoPoint" ;
+  rdfs:subClassOf wgs84:SpatialThing ;
+.
+geoWeather:GeoSet
+  rdf:type owl:Class ;
+  entity:hasSample """
+ Sample geoSet:
+ geoSet:WesternHemisphere
+    a geoWeather:geoSet;
+ 	  geoSet:name \"Western Hemisphere\"@en;
+ 	  geoSet:geoPoints (
+		 [geoPoint:lat \"0\",  geoPoint:long \"0\"],
+       [geoPoint:lat \"0\",  geoPoint:long \"-180\"],
+       [geoPoint:lat \"90\", geoPoint:long \"0\"],
+       [geoPoint:lat \"0\",  geoPoint:long \"0\"]
+       );
+ 	.
+ 	""" ;
+  entity:hasSample """
+ Sample geoSet:
+ geoSet:WesternHemisphere
+    a geoWeather:geoSet;
+      geoSet:name \"Western Hemisphere\"@en;
+      geoSet:WKTPolygon \"Polygon(\"0,0 0,-180 90,0 0,0)\";
+    .
+    """ ;
+  rdfs:comment "An ordered sequence of geopoints, along with a reference point."@en ;
+  rdfs:label "GeoSet" ;
+  rdfs:subClassOf geoWeather:geoPoint ;
+  rdfs:subClassOf owl:Collection ;
+.
 geoWeather:Measure
   rdf:type owl:Class ;
   rdfs:comment """This identifies a specific measurement dimension. It may be decomposed into different aspects, 
@@ -314,27 +318,6 @@ geoWeather:Measure
   rdfs:label "Measure" ;
   rdfs:subClassOf geoWeather:Entity ;
   rdfs:subClassOf qb:Dimension ;
-.
-measure:method
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "This identifies the specific type of measurements, such as a min or max value, being measured."@en ;
-  rdfs:domain geoWeather:Measure ;
-  rdfs:label "Method" ;
-  rdfs:range geoWeather:MeasureMethod ;
-.
-measure:type
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "This identifies the specific quality, such as air temperature, being measured."@en ;
-  rdfs:domain geoWeather:Measure ;
-  rdfs:label "Type" ;
-  rdfs:range geoWeather:MeasureType ;
-.
-measure:unit
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "This identifies the units of the quality being measured."@en ;
-  rdfs:domain geoWeather:Measure ;
-  rdfs:label "Method" ;
-  rdfs:range geoWeather:Unit ;
 .
 geoWeather:MeasureMethod
   rdf:type owl:Class ;
@@ -388,20 +371,6 @@ geoWeather:Polygon
   rdfs:comment "A string representation of a polygon."@en ;
   rdfs:label "Polygon" ;
 .
-polygon:type
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "An indicator of geoPolygon types, typically WKB or WKT notation. Note, this may be extended out to a formal class if there are enough representations."@en ;
-  rdfs:domain geoWeather:GeoSet ;
-  rdfs:label "value" ;
-  rdfs:range xsd:string ;
-.
-polygon:value
-  rdf:type owl:FunctionalProperty ;
-  rdfs:comment "A string representation of a geoSet in a given representation."@en ;
-  rdfs:domain geoWeather:GeoSet ;
-  rdfs:label "value" ;
-  rdfs:range xsd:string ;
-.
 geoWeather:Slice
   rdf:type owl:Class ;
   rdfs:comment "This identifies a slice of a data set."@en ;
@@ -423,38 +392,47 @@ geoWeather:WeatherMetric
   rdfs:subClassOf geoWeather:Entity ;
   rdfs:subClassOf qb:Dimension ;
 .
-geoWeather:WeatherMetricScheme
-  rdf:type skos:ConceptScheme ;
-  rdfs:label "Code list for Weather Metrics - codelist scheme"@en ;
-  rdfs:seeAlso geoWeather:WeatherMetricType ;
-  skos:definition "This establishes the particular aspect of daily weather being measured." ;
-  skos:hasTopConcept geoWeather:weatherMetric-Cloudcover ;
-  skos:hasTopConcept geoWeather:weatherMetric-Evapotranspiration ;
-  skos:hasTopConcept geoWeather:weatherMetric-GlobalRadiation ;
-  skos:hasTopConcept geoWeather:weatherMetric-HumidityRel ;
-  skos:hasTopConcept geoWeather:weatherMetric-PictoCode ;
-  skos:hasTopConcept geoWeather:weatherMetric-Precip ;
-  skos:hasTopConcept geoWeather:weatherMetric-PrecipDuration ;
-  skos:hasTopConcept geoWeather:weatherMetric-PrecipPredictability ;
-  skos:hasTopConcept geoWeather:weatherMetric-PrecipPredictabilityClass ;
-  skos:hasTopConcept geoWeather:weatherMetric-PrecipProbability ;
-  skos:hasTopConcept geoWeather:weatherMetric-ShowerProbability ;
-  skos:hasTopConcept geoWeather:weatherMetric-SunshineDuration ;
-  skos:hasTopConcept geoWeather:weatherMetric-TempAir ;
-  skos:hasTopConcept geoWeather:weatherMetric-ThunderstormProbability ;
-  skos:hasTopConcept geoWeather:weatherMetric-WindDirection ;
-  skos:hasTopConcept geoWeather:weatherMetric-WindGust ;
-  skos:hasTopConcept geoWeather:weatherMetric-WindSpeed ;
-  skos:notation "CL_WeatherMetric" ;
-  skos:note "This  code list provides the weather type."@en ;
-  skos:prefLabel "Code list for Weather Metrics - codelist scheme"@en ;
-.
 geoWeather:WeatherMetricType
   rdf:type rdfs:Class ;
   rdf:type owl:Class ;
   rdfs:label "Code list for weather-related measurement types - codelist class."@en ;
-  rdfs:seeAlso geoWeather:WeatherMetricScheme ;
+  rdfs:seeAlso <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
   rdfs:subClassOf skos:Concept ;
+.
+measure:method
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "This identifies the specific type of measurements, such as a min or max value, being measured."@en ;
+  rdfs:domain geoWeather:Measure ;
+  rdfs:label "Method" ;
+  rdfs:range geoWeather:MeasureMethod ;
+.
+measure:type
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "This identifies the specific quality, such as air temperature, being measured."@en ;
+  rdfs:domain geoWeather:Measure ;
+  rdfs:label "Type" ;
+  rdfs:range geoWeather:MeasureType ;
+.
+measure:unit
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "This identifies the units of the quality being measured."@en ;
+  rdfs:domain geoWeather:Measure ;
+  rdfs:label "Method" ;
+  rdfs:range geoWeather:Unit ;
+.
+polygon:type
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "An indicator of geoPolygon types, typically WKB or WKT notation. Note, this may be extended out to a formal class if there are enough representations."@en ;
+  rdfs:domain geoWeather:GeoSet ;
+  rdfs:label "value" ;
+  rdfs:range xsd:string ;
+.
+polygon:value
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "A string representation of a geoSet in a given representation."@en ;
+  rdfs:domain geoWeather:GeoSet ;
+  rdfs:label "value" ;
+  rdfs:range xsd:string ;
 .
 qb:Attachable
   rdf:type rdfs:Class ;
