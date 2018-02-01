@@ -11,6 +11,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix unit: <http://data.syngenta.org/def/geoWeather/Unit/> .
+@prefix weatherMetricTypes: <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/> .
 @prefix weatherMetrics: <http://data.syngenta.org/def/weatherMetrics/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -68,426 +69,426 @@ unit:pct
 weatherMetrics:CloudcoverDailyAvgpct
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyAvg> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/Cloudcover> ;
+  weatherMetrics:type weatherMetricTypes:Cloudcover ;
   weatherMetrics:unit unit:pct ;
   skos:definition "This provides the DailyAvg method of the Cloudcover in pct units." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "CDA" ;
   skos:prefLabel "Cloudcover_DailyAvg (pct)"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:EvapotranspirationDailySummm
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailySum> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/Evapotranspiration> ;
+  weatherMetrics:type weatherMetricTypes:Evapotranspiration ;
   weatherMetrics:unit unit:mm ;
   skos:definition "This provides the DailySum method of the Evapotranspiration in mm units." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "EDS" ;
   skos:prefLabel "Evapotranspiration_DailySum (mm)"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:EvapotranspirationQI1
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:qualityIndicator qualityIndicator:QI1 ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/Evapotranspiration> ;
+  weatherMetrics:type weatherMetricTypes:Evapotranspiration ;
   skos:definition "This provides the QI1 quality indicator of the Evapotranspiration." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "EQI1" ;
   skos:prefLabel "Evapotranspiration_QI1"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:EvapotranspirationQI2
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:qualityIndicator qualityIndicator:QI2 ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/Evapotranspiration> ;
+  weatherMetrics:type weatherMetricTypes:Evapotranspiration ;
   skos:definition "This provides the QI2 quality indicator of the Evapotranspiration." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "EQI2" ;
   skos:prefLabel "Evapotranspiration_QI2"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:GlobalRadiationDailySumQI1
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailySum> ;
   weatherMetrics:qualityIndicator qualityIndicator:QI1 ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/GlobalRadiation> ;
+  weatherMetrics:type weatherMetricTypes:GlobalRadiation ;
   skos:definition "This provides the DailySum method of the GlobalRadiation." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "GRDSQI1" ;
   skos:prefLabel "GlobalRadiation_DailySum_QI1"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:GlobalRadiationDailySumQI2
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailySum> ;
   weatherMetrics:qualityIndicator qualityIndicator:QI2 ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/GlobalRadiation> ;
+  weatherMetrics:type weatherMetricTypes:GlobalRadiation ;
   skos:definition "This provides the DailySum method of the GlobalRadiation." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "GRDSQI2" ;
   skos:prefLabel "GlobalRadiation_DailySum_QI2"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:GlobalRadiationDailySumWhm2
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailySum> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/GlobalRadiation> ;
+  weatherMetrics:type weatherMetricTypes:GlobalRadiation ;
   weatherMetrics:unit unit:Wh_per_m2 ;
   skos:definition "This provides the DailySum method of the GlobalRadiation in Wh/m2 units." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "GRDSW2" ;
   skos:prefLabel "GlobalRadiation_DailySum (Wh/m2)"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:HumidityRelDailyAvg
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyAvg> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/HumidityRel> ;
+  weatherMetrics:type weatherMetricTypes:HumidityRel ;
   skos:definition "This provides the DailyAvg method of the HumidityRel." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "HRDA" ;
   skos:prefLabel "HumidityRel_DailyAvg"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:HumidityRelDailyAvgQI1
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyAvg> ;
   weatherMetrics:qualityIndicator qualityIndicator:QI1 ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/HumidityRel> ;
+  weatherMetrics:type weatherMetricTypes:HumidityRel ;
   skos:definition "This provides the DailyAvg method of the HumidityRel." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "HRDAQI1" ;
   skos:prefLabel "HumidityRel_DailyAvg_QI1"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:HumidityRelDailyAvgQI2
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyAvg> ;
   weatherMetrics:qualityIndicator qualityIndicator:QI2 ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/HumidityRel> ;
+  weatherMetrics:type weatherMetricTypes:HumidityRel ;
   skos:definition "This provides the DailyAvg method of the HumidityRel." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "HRDAQI2" ;
   skos:prefLabel "HumidityRel_DailyAvg_QI2"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:HumidityRelDailyAvgpct
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyAvg> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/HumidityRel> ;
+  weatherMetrics:type weatherMetricTypes:HumidityRel ;
   weatherMetrics:unit unit:pct ;
   skos:definition "This provides the DailyAvg method of the HumidityRel in pct units." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "HRDA" ;
   skos:prefLabel "HumidityRel_DailyAvg (pct)"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:HumidityRelDailyMaxQI1
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyMax> ;
   weatherMetrics:qualityIndicator qualityIndicator:QI1 ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/HumidityRel> ;
+  weatherMetrics:type weatherMetricTypes:HumidityRel ;
   skos:definition "This provides the DailyMax method of the HumidityRel." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "HRDMQI1" ;
   skos:prefLabel "HumidityRel_DailyMax_QI1"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:HumidityRelDailyMaxQI2
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyMax> ;
   weatherMetrics:qualityIndicator qualityIndicator:QI2 ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/HumidityRel> ;
+  weatherMetrics:type weatherMetricTypes:HumidityRel ;
   skos:definition "This provides the DailyMax method of the HumidityRel." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "HRDMQI2" ;
   skos:prefLabel "HumidityRel_DailyMax_QI2"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:HumidityRelDailyMaxpct
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyMax> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/HumidityRel> ;
+  weatherMetrics:type weatherMetricTypes:HumidityRel ;
   weatherMetrics:unit unit:pct ;
   skos:definition "This provides the DailyMax method of the HumidityRel in pct units." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "HRDM" ;
   skos:prefLabel "HumidityRel_DailyMax (pct)"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:HumidityRelDailyMinQI1
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyMin> ;
   weatherMetrics:qualityIndicator qualityIndicator:QI1 ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/HumidityRel> ;
+  weatherMetrics:type weatherMetricTypes:HumidityRel ;
   skos:definition "This provides the DailyMin method of the HumidityRel." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "HRDMQI1" ;
   skos:prefLabel "HumidityRel_DailyMin_QI1"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:HumidityRelDailyMinQI2
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyMin> ;
   weatherMetrics:qualityIndicator qualityIndicator:QI2 ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/HumidityRel> ;
+  weatherMetrics:type weatherMetricTypes:HumidityRel ;
   skos:definition "This provides the DailyMin method of the HumidityRel." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "HRDMQI2" ;
   skos:prefLabel "HumidityRel_DailyMin_QI2"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:HumidityRelDailyMinpct
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyMin> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/HumidityRel> ;
+  weatherMetrics:type weatherMetricTypes:HumidityRel ;
   weatherMetrics:unit unit:pct ;
   skos:definition "This provides the DailyMin method of the HumidityRel in pct units." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "HRDM" ;
   skos:prefLabel "HumidityRel_DailyMin (pct)"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:PictoCodeDaily
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/Daily> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/PictoCode> ;
+  weatherMetrics:type weatherMetricTypes:PictoCode ;
   skos:definition "This provides the Daily method of the PictoCode." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "PCD" ;
   skos:prefLabel "PictoCode_Daily"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:PrecipDailySumQI1
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailySum> ;
   weatherMetrics:qualityIndicator qualityIndicator:QI1 ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/Precip> ;
+  weatherMetrics:type weatherMetricTypes:Precip ;
   skos:definition "This provides the DailySum method of the Precip." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "PDSQI1" ;
   skos:prefLabel "Precip_DailySum_QI1"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:PrecipDailySumQI2
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailySum> ;
   weatherMetrics:qualityIndicator qualityIndicator:QI2 ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/Precip> ;
+  weatherMetrics:type weatherMetricTypes:Precip ;
   skos:definition "This provides the DailySum method of the Precip." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "PDSQI2" ;
   skos:prefLabel "Precip_DailySum_QI2"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:PrecipDailySummm
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailySum> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/Precip> ;
+  weatherMetrics:type weatherMetricTypes:Precip ;
   weatherMetrics:unit unit:mm ;
   skos:definition "This provides the DailySum method of the Precip in mm units." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "PDS" ;
   skos:prefLabel "Precip_DailySum (mm)"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:PrecipDurationDailySumh
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailySum> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/PrecipDuration> ;
+  weatherMetrics:type weatherMetricTypes:PrecipDuration ;
   weatherMetrics:unit unit:h ;
   skos:definition "This provides the DailySum method of the PrecipDuration in h units." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "PDDS" ;
   skos:prefLabel "PrecipDuration_DailySum (h)"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:PrecipProbabilityDailypct
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/Daily> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/PrecipProbability> ;
+  weatherMetrics:type weatherMetricTypes:PrecipProbability ;
   weatherMetrics:unit unit:pct ;
   skos:definition "This provides the Daily method of the PrecipProbability in pct units." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "PPD" ;
   skos:prefLabel "PrecipProbability_Daily (pct)"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:PredictabilityClassDaily
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/Daily> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/PredictabilityClass> ;
+  weatherMetrics:type weatherMetricTypes:PrecipPredictabilityClass ;
   skos:definition "This provides the Daily method of the PredictabilityClass." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "PCD" ;
   skos:prefLabel "PredictabilityClass_Daily"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:PredictabilityDailypct
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/Daily> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/Predictability> ;
+  weatherMetrics:type weatherMetricTypes:PrecipPredictability ;
   weatherMetrics:unit unit:pct ;
   skos:definition "This provides the Daily method of the Predictability in pct units." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "PD" ;
   skos:prefLabel "Predictability_Daily (pct)"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:ShowerProbabilityDailyMaxpct
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyMax> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/ShowerProbability> ;
+  weatherMetrics:type weatherMetricTypes:ShowerProbability ;
   weatherMetrics:unit unit:pct ;
   skos:definition "This provides the DailyMax method of the ShowerProbability in pct units." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "SPDM" ;
   skos:prefLabel "ShowerProbability_DailyMax (pct)"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:SunshineDurationDailySumh
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailySum> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/SunshineDuration> ;
+  weatherMetrics:type weatherMetricTypes:SunshineDuration ;
   weatherMetrics:unit unit:h ;
   skos:definition "This provides the DailySum method of the SunshineDuration in h units." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "SDDS" ;
   skos:prefLabel "SunshineDuration_DailySum (h)"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:TempAirDailyAvgC
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyAvg> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/TempAir> ;
+  weatherMetrics:type weatherMetricTypes:TempAir ;
   weatherMetrics:unit unit:C ;
   skos:definition "This provides the DailyAvg method of the TempAir in C units." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "TADAC" ;
   skos:prefLabel "TempAir_DailyAvg (C)"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:TempAirDailyAvgQI1
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyAvg> ;
   weatherMetrics:qualityIndicator qualityIndicator:QI1 ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/TempAir> ;
+  weatherMetrics:type weatherMetricTypes:TempAir ;
   skos:definition "This provides the DailyAvg method of the TempAir." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "TADAQI1" ;
   skos:prefLabel "TempAir_DailyAvg_QI1"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:TempAirDailyAvgQI2
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyAvg> ;
   weatherMetrics:qualityIndicator qualityIndicator:QI2 ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/TempAir> ;
+  weatherMetrics:type weatherMetricTypes:TempAir ;
   skos:definition "This provides the DailyAvg method of the TempAir." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "TADAQI2" ;
   skos:prefLabel "TempAir_DailyAvg_QI2"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:TempAirDailyMaxC
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyMax> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/TempAir> ;
+  weatherMetrics:type weatherMetricTypes:TempAir ;
   weatherMetrics:unit unit:C ;
   skos:definition "This provides the DailyMax method of the TempAir in C units." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "TADMC" ;
   skos:prefLabel "TempAir_DailyMax (C)"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:TempAirDailyMinC
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyMin> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/TempAir> ;
+  weatherMetrics:type weatherMetricTypes:TempAir ;
   weatherMetrics:unit unit:C ;
   skos:definition "This provides the DailyMin method of the TempAir in C units." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "TADMC" ;
   skos:prefLabel "TempAir_DailyMin (C)"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:TempAirDaytimeMaxC
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DaytimeMax> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/TempAir> ;
+  weatherMetrics:type weatherMetricTypes:TempAir ;
   weatherMetrics:unit unit:C ;
   skos:definition "This provides the DaytimeMax method of the TempAir in C units." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "TADMC" ;
   skos:prefLabel "TempAir_DaytimeMax (C)"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:TempAirDaytimeMaxQI1
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DaytimeMax> ;
   weatherMetrics:qualityIndicator qualityIndicator:QI1 ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/TempAir> ;
+  weatherMetrics:type weatherMetricTypes:TempAir ;
   skos:definition "This provides the DaytimeMax method of the TempAir." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "TADMQI1" ;
   skos:prefLabel "TempAir_DaytimeMax_QI1"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:TempAirDaytimeMaxQI2
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DaytimeMax> ;
   weatherMetrics:qualityIndicator qualityIndicator:QI2 ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/TempAir> ;
+  weatherMetrics:type weatherMetricTypes:TempAir ;
   skos:definition "This provides the DaytimeMax method of the TempAir." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "TADMQI2" ;
   skos:prefLabel "TempAir_DaytimeMax_QI2"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:TempAirNighttimeMinC
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/NighttimeMin> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/TempAir> ;
+  weatherMetrics:type weatherMetricTypes:TempAir ;
   weatherMetrics:unit unit:C ;
   skos:definition "This provides the NighttimeMin method of the TempAir in C units." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "TANMC" ;
   skos:prefLabel "TempAir_NighttimeMin (C)"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:TempAirNighttimeMinQI1
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/NighttimeMin> ;
   weatherMetrics:qualityIndicator qualityIndicator:QI1 ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/TempAir> ;
+  weatherMetrics:type weatherMetricTypes:TempAir ;
   skos:definition "This provides the NighttimeMin method of the TempAir." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "TANMQI1" ;
   skos:prefLabel "TempAir_NighttimeMin_QI1"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:TempAirNighttimeMinQI2
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/NighttimeMin> ;
   weatherMetrics:qualityIndicator qualityIndicator:QI2 ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/TempAir> ;
+  weatherMetrics:type weatherMetricTypes:TempAir ;
   skos:definition "This provides the NighttimeMin method of the TempAir." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "TANMQI2" ;
   skos:prefLabel "TempAir_NighttimeMin_QI2"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:ThunderstormProbabilityDailyMaxpct
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyMax> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/ThunderstormProbability> ;
+  weatherMetrics:type weatherMetricTypes:ThunderstormProbability ;
   weatherMetrics:unit unit:pct ;
   skos:definition "This provides the DailyMax method of the ThunderstormProbability in pct units." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "TPDM" ;
   skos:prefLabel "ThunderstormProbability_DailyMax (pct)"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:WeatherMetric
   rdf:type owl:Class ;
@@ -496,90 +497,90 @@ weatherMetrics:WeatherMetric
 weatherMetrics:WindDirectionDailyAvgDeg
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyAvg> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WindDirection> ;
+  weatherMetrics:type weatherMetricTypes:WindDirection ;
   weatherMetrics:unit unit:Deg ;
   skos:definition "This provides the DailyAvg method of the WindDirection in Deg units." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "WDDAD" ;
   skos:prefLabel "WindDirection_DailyAvg (Deg)"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:WindGustDailyMaxms
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyMax> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WindGust> ;
+  weatherMetrics:type weatherMetricTypes:WindGust ;
   weatherMetrics:unit unit:m_per_s ;
   skos:definition "This provides the DailyMax method of the WindGust in m/s units." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "WGDM" ;
   skos:prefLabel "WindGust_DailyMax (m/s)"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:WindSpeedDailyAvgQI1
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyAvg> ;
   weatherMetrics:qualityIndicator qualityIndicator:QI1 ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WindSpeed> ;
+  weatherMetrics:type weatherMetricTypes:WindSpeed ;
   skos:definition "This provides the DailyAvg method of the WindSpeed." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "WSDAQI1" ;
   skos:prefLabel "WindSpeed_DailyAvg_QI1"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:WindSpeedDailyAvgQI2
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyAvg> ;
   weatherMetrics:qualityIndicator qualityIndicator:QI2 ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WindSpeed> ;
+  weatherMetrics:type weatherMetricTypes:WindSpeed ;
   skos:definition "This provides the DailyAvg method of the WindSpeed." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "WSDAQI2" ;
   skos:prefLabel "WindSpeed_DailyAvg_QI2"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:WindSpeedDailyAvgms
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyAvg> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WindSpeed> ;
+  weatherMetrics:type weatherMetricTypes:WindSpeed ;
   weatherMetrics:unit unit:m_per_s ;
   skos:definition "This provides the DailyAvg method of the WindSpeed in m/s units." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "WSDA" ;
   skos:prefLabel "WindSpeed_DailyAvg (m/s)"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:WindSpeedDailyMaxQI1
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyMax> ;
   weatherMetrics:qualityIndicator qualityIndicator:QI1 ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WindSpeed> ;
+  weatherMetrics:type weatherMetricTypes:WindSpeed ;
   skos:definition "This provides the DailyMax method of the WindSpeed." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "WSDMQI1" ;
   skos:prefLabel "WindSpeed_DailyMax_QI1"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:WindSpeedDailyMaxQI2
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyMax> ;
   weatherMetrics:qualityIndicator qualityIndicator:QI2 ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WindSpeed> ;
+  weatherMetrics:type weatherMetricTypes:WindSpeed ;
   skos:definition "This provides the DailyMax method of the WindSpeed." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "WSDMQI2" ;
   skos:prefLabel "WindSpeed_DailyMax_QI2"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:WindSpeedDailyMaxms
   rdf:type weatherMetrics:WeatherMetric ;
   weatherMetrics:method <http://data.syngenta.org/def/geoWeather/measureMethods/DailyMax> ;
-  weatherMetrics:type <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WindSpeed> ;
+  weatherMetrics:type weatherMetricTypes:WindSpeed ;
   weatherMetrics:unit unit:m_per_s ;
   skos:definition "This provides the DailyMax method of the WindSpeed in m/s units." ;
-  skos:inScheme <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:inScheme weatherMetricTypes:WeatherMetricScheme ;
   skos:notation "WSDM" ;
   skos:prefLabel "WindSpeed_DailyMax (m/s)"@en ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/WeatherMetricScheme> ;
+  skos:topConceptOf weatherMetricTypes:WeatherMetricScheme ;
 .
 weatherMetrics:method
   rdf:type owl:ObjectProperty ;
