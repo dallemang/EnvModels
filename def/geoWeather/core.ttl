@@ -1,4 +1,5 @@
 # baseURI: http://data.syngenta.org/def/geoWeather/core
+# imports: http://purl.org/linked-data/cube
 # imports: http://www.w3.org/2004/02/skos/core
 
 @prefix acl: <http://www.w3.org/ns/auth/acl#> .
@@ -262,6 +263,7 @@ geoSet:polygon
 .
 <http://data.syngenta.org/def/geoWeather/core>
   rdf:type owl:Ontology ;
+  owl:imports <http://purl.org/linked-data/cube> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:versionIRI <http://data.syngenta.org/def/geoWeather/core/v.0.0.1> ;
 .
@@ -336,14 +338,12 @@ geoWeather:Measure
     such as maximum value of a temperature on a given day."""@en ;
   rdfs:label "Measure" ;
   rdfs:subClassOf geoWeather:Entity ;
-  rdfs:subClassOf qb:Dimension ;
 .
 geoWeather:MeasureType
   rdf:type owl:Class ;
   rdfs:comment "This identifies the specific quality being measured, such as air temperature."@en ;
   rdfs:label "Measure Type" ;
   rdfs:subClassOf geoWeather:Entity ;
-  rdfs:subClassOf qb:Dimension ;
   rdfs:subClassOf skos:ConceptScheme ;
 .
 geoWeather:Observation
@@ -402,7 +402,6 @@ geoWeather:WeatherMetric
   rdfs:comment "This gives the enumeration of specific metric types."@en ;
   rdfs:label "Measure" ;
   rdfs:subClassOf geoWeather:Entity ;
-  rdfs:subClassOf qb:Dimension ;
 .
 geoWeather:WeatherMetricType
   rdf:type rdfs:Class ;
