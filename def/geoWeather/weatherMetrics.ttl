@@ -14,41 +14,6 @@
 @prefix weatherMetrics: <http://data.syngenta.org/def/weatherMetrics/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-measureMethod:Daily
-  rdf:type <http://data.syngenta.org/def/geoWeather/MeasureMethod> ;
-  skos:prefLabel "Daily" ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/MeasureMethodSchema> ;
-.
-measureMethod:DailyAvg
-  rdf:type <http://data.syngenta.org/def/geoWeather/MeasureMethod> ;
-  skos:prefLabel "DailyAvg" ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/MeasureMethodSchema> ;
-.
-measureMethod:DailyMax
-  rdf:type <http://data.syngenta.org/def/geoWeather/MeasureMethod> ;
-  skos:prefLabel "DailyMax" ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/MeasureMethodSchema> ;
-.
-measureMethod:DailyMin
-  rdf:type <http://data.syngenta.org/def/geoWeather/MeasureMethod> ;
-  skos:prefLabel "DailyMin" ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/MeasureMethodSchema> ;
-.
-measureMethod:DailySum
-  rdf:type <http://data.syngenta.org/def/geoWeather/MeasureMethod> ;
-  skos:prefLabel "DailySum" ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/MeasureMethodSchema> ;
-.
-measureMethod:DaytimeMax
-  rdf:type <http://data.syngenta.org/def/geoWeather/MeasureMethod> ;
-  skos:prefLabel "DaytimeMax" ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/MeasureMethodSchema> ;
-.
-measureMethod:NighttimeMin
-  rdf:type <http://data.syngenta.org/def/geoWeather/MeasureMethod> ;
-  skos:prefLabel "NighttimeMin" ;
-  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/MeasureMethodSchema> ;
-.
 qualityIndicator:QI1
   rdf:type <http://data.syngenta.org/def/geoWeather/QualityIndicator> ;
   skos:prefLabel "QI1" ;

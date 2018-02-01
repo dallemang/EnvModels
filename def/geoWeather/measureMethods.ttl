@@ -1,0 +1,53 @@
+# baseURI: http://data.syngenta.org/def/geoWeather/measureMethods
+# imports: http://data.syngenta.org/def/weatherMetrics
+# imports: http://www.w3.org/2004/02/skos/core
+# prefix: measureMethods
+
+@prefix measureMethods: <http://data.syngenta.org/def/geoWeather/measureMethods#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.syngenta.org/def/MeasureMethod/Daily>
+  rdf:type <http://data.syngenta.org/def/geoWeather/MeasureMethod> ;
+  skos:prefLabel "Daily" ;
+  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/MeasureMethodSchema> ;
+.
+<http://data.syngenta.org/def/MeasureMethod/DailyAvg>
+  rdf:type <http://data.syngenta.org/def/geoWeather/MeasureMethod> ;
+  skos:prefLabel "DailyAvg" ;
+  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/MeasureMethodSchema> ;
+.
+<http://data.syngenta.org/def/MeasureMethod/DailyMax>
+  rdf:type <http://data.syngenta.org/def/geoWeather/MeasureMethod> ;
+  skos:prefLabel "DailyMax" ;
+  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/MeasureMethodSchema> ;
+.
+<http://data.syngenta.org/def/MeasureMethod/DailyMin>
+  rdf:type <http://data.syngenta.org/def/geoWeather/MeasureMethod> ;
+  skos:prefLabel "DailyMin" ;
+  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/MeasureMethodSchema> ;
+.
+<http://data.syngenta.org/def/MeasureMethod/DailySum>
+  rdf:type <http://data.syngenta.org/def/geoWeather/MeasureMethod> ;
+  skos:prefLabel "DailySum" ;
+  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/MeasureMethodSchema> ;
+.
+<http://data.syngenta.org/def/MeasureMethod/DaytimeMax>
+  rdf:type <http://data.syngenta.org/def/geoWeather/MeasureMethod> ;
+  skos:prefLabel "DaytimeMax" ;
+  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/MeasureMethodSchema> ;
+.
+<http://data.syngenta.org/def/MeasureMethod/NighttimeMin>
+  rdf:type <http://data.syngenta.org/def/geoWeather/MeasureMethod> ;
+  skos:prefLabel "NighttimeMin" ;
+  skos:topConceptOf <http://data.syngenta.org/def/geoWeather/MeasureMethodSchema> ;
+.
+<http://data.syngenta.org/def/geoWeather/measureMethods>
+  rdf:type owl:Ontology ;
+  owl:imports <http://data.syngenta.org/def/weatherMetrics> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
