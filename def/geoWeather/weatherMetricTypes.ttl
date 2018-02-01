@@ -1,0 +1,116 @@
+# baseURI: http://data.syngenta.org/def/geoWeather/weatherMetricTypes
+# imports: http://data.syngenta.org/def/geoWeather/core
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix weatherMetricTypes: <http://data.syngenta.org/def/geoWeather/weatherMetricTypes/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.syngenta.org/def/geoWeather/weatherMetricTypes>
+  rdf:type owl:Ontology ;
+  owl:imports <http://data.syngenta.org/def/geoWeather/core> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+weatherMetricTypes:Cloudcover
+  rdf:type weatherMetricTypes:WeatherMetricType ;
+  skos:prefLabel "Cloudcover"@en ;
+.
+weatherMetricTypes:Evapotranspiration
+  rdf:type weatherMetricTypes:WeatherMetricType ;
+  skos:prefLabel "Evapotranspiration"@en ;
+.
+weatherMetricTypes:GlobalRadiation
+  rdf:type weatherMetricTypes:WeatherMetricType ;
+  skos:prefLabel "Global radiation"@en ;
+.
+weatherMetricTypes:HumidityRel
+  rdf:type weatherMetricTypes:WeatherMetricType ;
+  skos:prefLabel "Humidity rel"@en ;
+.
+weatherMetricTypes:PictoCode
+  rdf:type weatherMetricTypes:WeatherMetricType ;
+  skos:prefLabel "Picto code"@en ;
+.
+weatherMetricTypes:Precip
+  rdf:type weatherMetricTypes:WeatherMetricType ;
+  skos:prefLabel "Precip"@en ;
+.
+weatherMetricTypes:PrecipDuration
+  rdf:type weatherMetricTypes:WeatherMetricType ;
+  skos:prefLabel "Precip duration"@en ;
+.
+weatherMetricTypes:PrecipProbability
+  rdf:type weatherMetricTypes:WeatherMetricType ;
+  skos:prefLabel "Precip probability"@en ;
+.
+weatherMetricTypes:Predictability
+  rdf:type weatherMetricTypes:WeatherMetricType ;
+  skos:prefLabel "Predictability"@en ;
+.
+weatherMetricTypes:PredictabilityClass
+  rdf:type weatherMetricTypes:WeatherMetricType ;
+  skos:prefLabel "Predictability class"@en ;
+.
+weatherMetricTypes:ShowerProbability
+  rdf:type weatherMetricTypes:WeatherMetricType ;
+  skos:prefLabel "Shower probability"@en ;
+.
+weatherMetricTypes:SunshineDuration
+  rdf:type weatherMetricTypes:WeatherMetricType ;
+  skos:prefLabel "Sunshine duration"@en ;
+.
+weatherMetricTypes:TempAir
+  rdf:type weatherMetricTypes:WeatherMetricType ;
+  skos:prefLabel "Temp air"@en ;
+.
+weatherMetricTypes:ThunderstormProbability
+  rdf:type weatherMetricTypes:WeatherMetricType ;
+  skos:prefLabel "Thunderstorm probability"@en ;
+.
+weatherMetricTypes:WeatherMetricScheme
+  rdf:type skos:ConceptScheme ;
+  rdfs:label "Code list for Weather Metrics - codelist scheme"@en ;
+  rdfs:seeAlso <http://data.syngenta.org/def/geoWeather/core/WeatherMetricType> ;
+  skos:definition "This establishes the particular aspect of daily weather being measured." ;
+  skos:hasTopConcept <http://data.syngenta.org/def/geoWeather/core/weatherMetric-Cloudcover> ;
+  skos:hasTopConcept <http://data.syngenta.org/def/geoWeather/core/weatherMetric-Evapotranspiration> ;
+  skos:hasTopConcept <http://data.syngenta.org/def/geoWeather/core/weatherMetric-GlobalRadiation> ;
+  skos:hasTopConcept <http://data.syngenta.org/def/geoWeather/core/weatherMetric-HumidityRel> ;
+  skos:hasTopConcept <http://data.syngenta.org/def/geoWeather/core/weatherMetric-PictoCode> ;
+  skos:hasTopConcept <http://data.syngenta.org/def/geoWeather/core/weatherMetric-Precip> ;
+  skos:hasTopConcept <http://data.syngenta.org/def/geoWeather/core/weatherMetric-PrecipDuration> ;
+  skos:hasTopConcept <http://data.syngenta.org/def/geoWeather/core/weatherMetric-PrecipPredictability> ;
+  skos:hasTopConcept <http://data.syngenta.org/def/geoWeather/core/weatherMetric-PrecipPredictabilityClass> ;
+  skos:hasTopConcept <http://data.syngenta.org/def/geoWeather/core/weatherMetric-PrecipProbability> ;
+  skos:hasTopConcept <http://data.syngenta.org/def/geoWeather/core/weatherMetric-ShowerProbability> ;
+  skos:hasTopConcept <http://data.syngenta.org/def/geoWeather/core/weatherMetric-SunshineDuration> ;
+  skos:hasTopConcept <http://data.syngenta.org/def/geoWeather/core/weatherMetric-TempAir> ;
+  skos:hasTopConcept <http://data.syngenta.org/def/geoWeather/core/weatherMetric-ThunderstormProbability> ;
+  skos:hasTopConcept <http://data.syngenta.org/def/geoWeather/core/weatherMetric-WindDirection> ;
+  skos:hasTopConcept <http://data.syngenta.org/def/geoWeather/core/weatherMetric-WindGust> ;
+  skos:hasTopConcept <http://data.syngenta.org/def/geoWeather/core/weatherMetric-WindSpeed> ;
+  skos:notation "CL_WeatherMetric" ;
+  skos:note "This  code list provides the weather type."@en ;
+  skos:prefLabel "Code list for Weather Metrics - codelist scheme"@en ;
+.
+weatherMetricTypes:WeatherMetricType
+  rdf:type owl:Class ;
+  rdfs:label "Weather metric type" ;
+  rdfs:subClassOf skos:Concept ;
+.
+weatherMetricTypes:WindDirection
+  rdf:type weatherMetricTypes:WeatherMetricType ;
+  skos:prefLabel "Wind direction"@en ;
+.
+weatherMetricTypes:WindGust
+  rdf:type weatherMetricTypes:WeatherMetricType ;
+  skos:prefLabel "Wind gust"@en ;
+.
+weatherMetricTypes:WindSpeed
+  rdf:type weatherMetricTypes:WeatherMetricType ;
+  skos:prefLabel "Wind speed"@en ;
+.

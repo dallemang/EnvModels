@@ -1,4 +1,4 @@
-# baseURI: http://data.syngenta.org/def/geoWeather
+# baseURI: http://data.syngenta.org/def/geoWeather/core
 # imports: http://www.w3.org/2004/02/skos/core
 
 @prefix acl: <http://www.w3.org/ns/auth/acl#> .
@@ -11,15 +11,15 @@
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix geoPoint: <http://data.syngenta.org/def/geoWeather/GeoPoint/> .
 @prefix geoSet: <http://data.syngenta.org/def/geoWeather/GeoSet/> .
-@prefix geoWeather: <http://data.syngenta.org/def/geoWeather/> .
+@prefix geoWeather: <http://data.syngenta.org/def/geoWeather/core/> .
 @prefix gn: <http://www.geonames.org/ontology#> .
 @prefix interval: <http://reference.data.gov.uk/def/intervals/> .
-@prefix measure: <http://data.syngenta.org/def/geoWeather/Measure/> .
+@prefix measure: <http://data.syngenta.org/def/measure/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
-@prefix observation: <http://data.syngenta.org/def/geoWeather/Observation/> .
+@prefix observation: <http://data.syngenta.org/def/observation/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix polygon: <http://data.syngenta.org/def/geoWeather/Polygon/> .
+@prefix polygon: <http://data.syngenta.org/def/polygon/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
 @prefix qudt: <http://qudt.org/1.1/schema/qudt#> .
