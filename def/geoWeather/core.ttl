@@ -219,7 +219,7 @@ geoSet:geoPoints
   rdfs:comment "The ordered  collection of geoPoints."@en ;
   rdfs:domain geoWeather:GeoSet ;
   rdfs:label "geoPoints" ;
-  rdfs:range owl:Collection ;
+  rdfs:range skos:Collection ;
 .
 geoSet:lat
   rdf:type rdf:Property ;
