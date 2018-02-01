@@ -1,5 +1,4 @@
 # baseURI: http://data.syngenta.org/def/geoWeather/core
-# imports: http://purl.org/linked-data/cube
 # imports: http://www.w3.org/2004/02/skos/core
 
 @prefix acl: <http://www.w3.org/ns/auth/acl#> .
@@ -263,7 +262,6 @@ geoSet:polygon
 .
 <http://data.syngenta.org/def/geoWeather/core>
   rdf:type owl:Ontology ;
-  owl:imports <http://purl.org/linked-data/cube> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:versionIRI <http://data.syngenta.org/def/geoWeather/core/v.0.0.1> ;
 .
