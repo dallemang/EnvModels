@@ -2,44 +2,44 @@
 # imports: http://www.w3.org/2004/02/skos/core
 # prefix: measureMethods
 
-@prefix measureMethods: <http://data.syngenta.org/def/geoWeather/measureMethods#> .
+@prefix measureMethods: <http://data.syngenta.org/def/geoWeather/measureMethods/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://data.syngenta.org/def/MeasureMethod/Daily>
+<http://data.syngenta.org/def/geoWeather/measureMethods/Daily>
   rdf:type measureMethods:MeasureMethod ;
   skos:prefLabel "Daily" ;
   skos:topConceptOf measureMethods:MeasureMethodScheme ;
 .
-<http://data.syngenta.org/def/MeasureMethod/DailyAvg>
+<http://data.syngenta.org/def/geoWeather/measureMethods/DailyAvg>
   rdf:type measureMethods:MeasureMethod ;
   skos:prefLabel "DailyAvg" ;
   skos:topConceptOf measureMethods:MeasureMethodScheme ;
 .
-<http://data.syngenta.org/def/MeasureMethod/DailyMax>
+<http://data.syngenta.org/def/geoWeather/measureMethods/DailyMax>
   rdf:type measureMethods:MeasureMethod ;
   skos:prefLabel "DailyMax" ;
   skos:topConceptOf measureMethods:MeasureMethodScheme ;
 .
-<http://data.syngenta.org/def/MeasureMethod/DailyMin>
+<http://data.syngenta.org/def/geoWeather/measureMethods/DailyMin>
   rdf:type measureMethods:MeasureMethod ;
   skos:prefLabel "DailyMin" ;
   skos:topConceptOf measureMethods:MeasureMethodScheme ;
 .
-<http://data.syngenta.org/def/MeasureMethod/DailySum>
+<http://data.syngenta.org/def/geoWeather/measureMethods/DailySum>
   rdf:type measureMethods:MeasureMethod ;
   skos:prefLabel "DailySum" ;
   skos:topConceptOf measureMethods:MeasureMethodScheme ;
 .
-<http://data.syngenta.org/def/MeasureMethod/DaytimeMax>
+<http://data.syngenta.org/def/geoWeather/measureMethods/DaytimeMax>
   rdf:type measureMethods:MeasureMethod ;
   skos:prefLabel "DaytimeMax" ;
   skos:topConceptOf measureMethods:MeasureMethodScheme ;
 .
-<http://data.syngenta.org/def/MeasureMethod/NighttimeMin>
+<http://data.syngenta.org/def/geoWeather/measureMethods/NighttimeMin>
   rdf:type measureMethods:MeasureMethod ;
   skos:prefLabel "NighttimeMin" ;
   skos:topConceptOf measureMethods:MeasureMethodScheme ;
