@@ -98,6 +98,9 @@ entity:name
   owl:versionIRI <http://data.syngenta.org/def/geoWeather/v0.1.0> ;
   owl:versionInfo "v2.1.0" ;
 .
+geoPoint:alt
+  rdf:type rdf:Property ;
+.
 geoPoint:altitude
   rdf:type rdf:Property ;
   rdfs:comment "The geoWeather altitude in meters above the model surface, based on wgs84."@en ;
@@ -105,7 +108,7 @@ geoPoint:altitude
   rdfs:label "alt" ;
   rdfs:range xsd:double ;
   rdfs:subPropertyOf wgs84:alt ;
-  owl:sameAs geoPoint:alt ;
+  owl:equivalentProperty geoPoint:alt ;
 .
 geoPoint:code
   rdf:type rdf:Property ;
@@ -129,6 +132,9 @@ geoPoint:feature
   rdfs:label "feature" ;
   rdfs:range gn:Feature ;
 .
+geoPoint:lat
+  rdf:type rdf:Property ;
+.
 geoPoint:latitude
   rdf:type rdf:Property ;
   rdfs:comment "The geoWeather latitude, in decimal degrees, based on wgs84."@en ;
@@ -136,7 +142,10 @@ geoPoint:latitude
   rdfs:label "latitude" ;
   rdfs:range xsd:double ;
   rdfs:subPropertyOf wgs84:lat ;
-  owl:sameAs geoPoint:lat ;
+  owl:equivalentProperty geoPoint:lat ;
+.
+geoPoint:long
+  rdf:type rdf:Property ;
 .
 geoPoint:longitude
   rdf:type rdf:Property ;
@@ -145,7 +154,7 @@ geoPoint:longitude
   rdfs:label "longitude" ;
   rdfs:range xsd:double ;
   rdfs:subPropertyOf wgs84:long ;
-  owl:sameAs geoPoint:long ;
+  owl:equivalentProperty geoPoint:long ;
 .
 geoPoint:name
   rdf:type rdf:Property ;
@@ -172,6 +181,9 @@ geoSet:WKTPolygon
   rdfs:range xsd:string ;
   rdfs:subPropertyOf geoSet:polygon ;
 .
+geoSet:alt
+  rdf:type rdf:Property ;
+.
 geoSet:altitude
   rdf:type rdf:Property ;
   rdfs:comment "The geoWeather altitude in meters above the model surface, based on wgs84."@en ;
@@ -179,7 +191,7 @@ geoSet:altitude
   rdfs:label "alt" ;
   rdfs:range xsd:double ;
   rdfs:subPropertyOf wgs84:alt ;
-  owl:sameAs geoSet:alt ;
+  owl:equivalentProperty geoSet:alt ;
 .
 geoSet:code
   rdf:type rdf:Property ;
@@ -209,6 +221,9 @@ geoSet:geoPoints
   rdfs:label "geoPoints" ;
   rdfs:range owl:Collection ;
 .
+geoSet:lat
+  rdf:type rdf:Property ;
+.
 geoSet:latitude
   rdf:type rdf:Property ;
   rdfs:comment "The geoWeather latitude, in decimal degrees, based on wgs84."@en ;
@@ -216,7 +231,10 @@ geoSet:latitude
   rdfs:label "latitude" ;
   rdfs:range xsd:double ;
   rdfs:subPropertyOf wgs84:lat ;
-  owl:sameAs geoSet:lat ;
+  owl:equivalentProperty geoSet:lat ;
+.
+geoSet:long
+  rdf:type rdf:Property ;
 .
 geoSet:longitude
   rdf:type rdf:Property ;
@@ -225,7 +243,7 @@ geoSet:longitude
   rdfs:label "longitude" ;
   rdfs:range xsd:double ;
   rdfs:subPropertyOf wgs84:long ;
-  owl:sameAs geoSet:long ;
+  owl:equivalentProperty geoSet:long ;
 .
 geoSet:name
   rdf:type rdf:Property ;
