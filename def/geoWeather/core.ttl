@@ -1,4 +1,6 @@
 # baseURI: http://data.syngenta.org/def/geoWeather/core
+# imports: http://data.syngenta.org/def/geoWeather/measureMethods
+# imports: http://www.geonames.org/ontology
 # imports: http://www.w3.org/2004/02/skos/core
 
 @prefix acl: <http://www.w3.org/ns/auth/acl#> .
@@ -262,6 +264,8 @@ geoSet:polygon
 .
 <http://data.syngenta.org/def/geoWeather/core>
   rdf:type owl:Ontology ;
+  owl:imports <http://data.syngenta.org/def/geoWeather/measureMethods> ;
+  owl:imports <http://www.geonames.org/ontology> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:versionIRI <http://data.syngenta.org/def/geoWeather/core/v.0.0.1> ;
 .
@@ -413,7 +417,7 @@ measure:method
   rdfs:comment "This identifies the specific type of measurements, such as a min or max value, being measured."@en ;
   rdfs:domain geoWeather:Measure ;
   rdfs:label "Method" ;
-  rdfs:range geoWeather:MeasureMethod ;
+  rdfs:range <http://data.syngenta.org/def/geoWeather/measureMethods/MeasureMethod> ;
 .
 measure:type
   rdf:type owl:ObjectProperty ;
