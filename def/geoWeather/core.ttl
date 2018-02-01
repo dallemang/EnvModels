@@ -309,8 +309,8 @@ geoWeather:GeoSet
     """ ;
   rdfs:comment "An ordered sequence of geopoints, along with a reference point."@en ;
   rdfs:label "GeoSet" ;
-  rdfs:subClassOf geoWeather:geoPoint ;
-  rdfs:subClassOf owl:Collection ;
+  rdfs:subClassOf geoWeather:GeoPoint ;
+  rdfs:subClassOf skos:Collection ;
 .
 geoWeather:Measure
   rdf:type owl:Class ;
