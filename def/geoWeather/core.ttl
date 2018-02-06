@@ -74,7 +74,7 @@ entity:name
   rdfs:range xsd:string ;
   rdfs:subPropertyOf skos:prefLabel ;
 .
-<http://data.syngenta.org/def/geoWeather>
+<http://data.syngenta.org/def/geoWeather/core>
   rdf:type owl:Ontology ;
   dc:title "Syngenta geoWeather Ontology" ;
   dcterms:created "2017-09-22"^^xsd:date ;
