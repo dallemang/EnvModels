@@ -139,7 +139,7 @@ geoPoint:name
 .
 geoSet:WKBPolygon
   rdf:type rdf:Property ;
-  rdf:type owl:ObjectProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "A representation of a WKB based polygon as a string."@en ;
   rdfs:domain geoWeather:GeoSet ;
   rdfs:label "WKB polygon" ;
@@ -148,7 +148,7 @@ geoSet:WKBPolygon
 .
 geoSet:WKTPolygon
   rdf:type rdf:Property ;
-  rdf:type owl:ObjectProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "A representation of a WKT based polygon as a string."@en ;
   rdfs:domain geoWeather:GeoSet ;
   rdfs:label "WKT polygon" ;
@@ -228,7 +228,7 @@ geoSet:name
 .
 geoSet:polygon
   rdf:type rdf:Property ;
-  rdf:type owl:ObjectProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "A representation of a polygon as a string. This is an abstract property for inheritance by specific polygon encodings."@en ;
   rdfs:domain geoWeather:GeoSet ;
   rdfs:label "polygon" ;
@@ -426,7 +426,7 @@ measure:unit
   rdfs:range geoWeather:Unit ;
 .
 polygon:type
-  rdf:type owl:ObjectProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:comment "An indicator of geoPolygon types, typically WKB or WKT notation. Note, this may be extended out to a formal class if there are enough representations."@en ;
   rdfs:domain geoWeather:GeoSet ;
   rdfs:label "value" ;
