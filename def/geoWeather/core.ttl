@@ -1,6 +1,5 @@
 # baseURI: http://data.syngenta.org/def/geoWeather/core
 # imports: http://data.syngenta.org/def/geoWeather/measureMethods
-# imports: http://www.geonames.org/ontology
 
 @prefix acl: <http://www.w3.org/ns/auth/acl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -258,7 +257,6 @@ geoSet:polygon
   rdfs:comment "This is an import ontology intended to support geoWeather (geoTroll) content."@en ;
   rdfs:seeAlso <http://data.syngenta.org/def/geoWeather-linkset> ;
   owl:imports <http://data.syngenta.org/def/geoWeather/measureMethods> ;
-  owl:imports <http://www.geonames.org/ontology> ;
   owl:versionIRI <http://data.syngenta.org/def/geoWeather/core/v.0.0.1> ;
   owl:versionIRI <http://data.syngenta.org/def/geoWeather/v0.1.0> ;
   owl:versionInfo "v2.1.0" ;
