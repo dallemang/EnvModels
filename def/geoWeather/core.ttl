@@ -1,7 +1,6 @@
 # baseURI: http://data.syngenta.org/def/geoWeather/core
 # imports: http://data.syngenta.org/def/geoWeather/measureMethods
 # imports: http://www.geonames.org/ontology
-# imports: http://www.w3.org/2004/02/skos/core
 
 @prefix acl: <http://www.w3.org/ns/auth/acl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -73,32 +72,6 @@ entity:name
   rdfs:label "Name" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf skos:prefLabel ;
-.
-<http://data.syngenta.org/def/geoWeather/core>
-  rdf:type owl:Ontology ;
-  dc:title "Syngenta geoWeather Ontology" ;
-  dcterms:created "2017-09-22"^^xsd:date ;
-  dcterms:creator [
-      rdf:type syu:Person ;
-      syu:hasXRDPrefTerm "Allemang, Dean" ;
-      foaf:mbox "dean.allemang@workingontologist.com" ;
-      foaf:name "Dean Allemang" ;
-    ] ;
-  dcterms:creator [
-      rdf:type syu:Person ;
-      syu:hasXRDPrefTerm "Cagle,Kurt" ;
-      foaf:mbox "kurt.cagle@gmail.com" ;
-      foaf:name "Kurt Cagle" ;
-    ] ;
-  dcterms:identifier <http://data.syngenta.org/def/geoWeather> ;
-  dcterms:issued "2017-09-22"^^xsd:date ;
-  dcterms:modified "2018-01-28"^^xsd:date ;
-  dcterms:replaces <http://data.syngenta.org/def/upper/0.1.0> ;
-  rdfs:comment "This is an import ontology intended to support geoWeather (geoTroll) content."@en ;
-  rdfs:seeAlso <http://data.syngenta.org/def/geoWeather-linkset> ;
-  owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  owl:versionIRI <http://data.syngenta.org/def/geoWeather/v0.1.0> ;
-  owl:versionInfo "v2.1.0" ;
 .
 geoPoint:alt
   rdf:type rdf:Property ;
@@ -264,10 +237,31 @@ geoSet:polygon
 .
 <http://data.syngenta.org/def/geoWeather/core>
   rdf:type owl:Ontology ;
+  dc:title "Syngenta geoWeather Ontology" ;
+  dcterms:created "2017-09-22"^^xsd:date ;
+  dcterms:creator [
+      rdf:type syu:Person ;
+      syu:hasXRDPrefTerm "Allemang, Dean" ;
+      foaf:mbox "dean.allemang@workingontologist.com" ;
+      foaf:name "Dean Allemang" ;
+    ] ;
+  dcterms:creator [
+      rdf:type syu:Person ;
+      syu:hasXRDPrefTerm "Cagle,Kurt" ;
+      foaf:mbox "kurt.cagle@gmail.com" ;
+      foaf:name "Kurt Cagle" ;
+    ] ;
+  dcterms:identifier <http://data.syngenta.org/def/geoWeather> ;
+  dcterms:issued "2017-09-22"^^xsd:date ;
+  dcterms:modified "2018-01-28"^^xsd:date ;
+  dcterms:replaces <http://data.syngenta.org/def/upper/0.1.0> ;
+  rdfs:comment "This is an import ontology intended to support geoWeather (geoTroll) content."@en ;
+  rdfs:seeAlso <http://data.syngenta.org/def/geoWeather-linkset> ;
   owl:imports <http://data.syngenta.org/def/geoWeather/measureMethods> ;
   owl:imports <http://www.geonames.org/ontology> ;
-  owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:versionIRI <http://data.syngenta.org/def/geoWeather/core/v.0.0.1> ;
+  owl:versionIRI <http://data.syngenta.org/def/geoWeather/v0.1.0> ;
+  owl:versionInfo "v2.1.0" ;
 .
 geoWeather:DataSet
   rdf:type owl:Class ;
